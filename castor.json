@@ -1,0 +1,37 @@
+{
+  "ArchiveName": "ZT2-mod-template",
+  "RepoName": "GitHubAccount/Reponame",
+  "Author": null,
+  "Version": "v0.0.1",
+  "Type": "mod",
+  "License": null,
+  "Description": "Lorem ipsum",
+  "Z2f": true,
+  "ZT2loc": "C:\\Program Files (x86)\\Microsoft Games\\Zoo Tycoon 2",
+  "IncludeFolders": [
+    "ai",
+    "awards",
+    "biomes",
+    "config",
+    "effects",
+    "entities",
+    "lang",
+    "locations",
+    "maps",
+    "materials",
+    "photochall",
+    "puzzles",
+    "scenario",
+    "scripts",
+    "shared",
+    "tourdata",
+    "ui",
+    "world",
+    "xpinfo"
+  ],
+  "ExcludeFolders": [],
+  "Dependencies": [
+    "ZtModArchive/ArluqTools/v2.7"
+  ],
+  "DevDependencies": []
+}

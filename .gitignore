@@ -1,0 +1,7 @@
+# exclude files
+*.zip
+*.z2f
+castorlog.txt
+
+# exclude modules
+modules/

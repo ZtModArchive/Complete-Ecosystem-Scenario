@@ -1,0 +1,23 @@
+name: Validate
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Validate
+      uses: anyone-developer/anyone-validate-xml@main
+      with:
+        file-extension: '.beh,.bfmat,.tsk,.txtkeys,.xml,.zt2'
+        ignore-files: 'README.md'
+        ignore-directories: '.git'
+        read-path: '.'
