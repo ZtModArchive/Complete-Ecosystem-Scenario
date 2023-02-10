@@ -5,4 +5,4 @@
 >
 > \- Unknown Zoo Tycoon 2 developer
 
-This is an attempt at remaking a scrapped scenario from Zoo Tycoon 1.
+This is an attempt at remaking a scrapped scenario from Zoo Tycoon 2, which involved putting both savannah herbivores and carnivores together in the same habitat.
