@@ -65,6 +65,8 @@ checkHerbivoresAlive = function()
             return false
         end
     end
+
+    return true
 end
 
 --- Returns how many savannah herbivores share a habitat with a savannah carnivore
