@@ -1,0 +1,188 @@
+<maps>
+	<camp1scen2>
+		<ZTMapData version="0" name="mapname:rainforestsml" size="mapsize:small" biome="tropicalrainforest" location="rainforest1" />
+	</camp1scen2>
+	<camp1scen3>
+		<ZTMapData version="0" name="mapname:borealsml" size="mapsize:small" biome="borealforest" location="boreal1" />
+	</camp1scen3>
+	<camp2scen1>
+		<ZTMapData version="0" name="mapname:temperatesml" size="mapsize:small" biome="temperateforest" location="temperate1" />
+	</camp2scen1>
+	<camp2scen2>
+		<ZTMapData version="0" name="mapname:grasslandsml" size="mapsize:small" biome="grassland" location="sandiego" />
+	</camp2scen2>
+	<camp2scen3>
+		<ZTMapData version="0" name="mapname:grasslandmed" size="mapsize:medium" biome="grassland" location="sandiego" />
+	</camp2scen3>
+	<newcampgn1>
+		<ZTMapData version="0" name="mapname:cityzoomed" size="mapsize:medium" biome="grassland" location="denver" />
+	</newcampgn1>
+	<pandacampaign>
+		<ZTMapData version="0" name="mapname:grasslandmed" size="mapsize:medium" biome="grassland" location="sandiego" />
+	</pandacampaign>
+	<speciescampsc1v2>
+		<ZTMapData version="0" name="mapname:wetlandsml" size="mapsize:small" biome="wetlands" location="wetland1" protected="" xpack="0" />
+	</speciescampsc1v2>
+	<speciescampscen2>
+		<ZTMapData version="0" name="mapname:rainforestsml" size="mapsize:small" biome="tropicalrainforest" location="rainforest1" />
+	</speciescampscen2>
+	<speciescampscen3>
+		<ZTMapData version="0" name="mapname:cityzoomed" size="mapsize:medium" biome="grassland" location="denver" />
+	</speciescampscen3>
+	<tutorialscen1>
+		<ZTMapData version="0" name="mapname:cityzoosml" size="mapsize:small" biome="grassland" location="denver" />
+	</tutorialscen1>
+	<tutorialscen2>
+		<ZTMapData version="0" name="mapname:cityzoosml" size="mapsize:small" biome="grassland" location="denver" />
+	</tutorialscen2>
+	<tutorialscen3>
+		<ZTMapData version="0" name="mapname:cityzoosml" size="mapsize:small" biome="grassland" location="denver" />
+	</tutorialscen3>
+	<worldcampscen1>
+		<ZTMapData version="0" name="mapname:rainforestmed" size="mapsize:medium" biome="tropicalrainforest" location="rainforest1" />
+	</worldcampscen1>
+	<worldcampscen2>
+		<ZTMapData version="0" name="mapname:borealmed" size="mapsize:medium" biome="borealforest" location="boreal1" />
+	</worldcampscen2>
+	<worldcampscen3>
+		<ZTMapData version="0" name="mapname:temperatemed" size="mapsize:medium" biome="temperateforest" location="temperate1" />
+	</worldcampscen3>
+	<worldcampscen4>
+		<ZTMapData version="0" name="mapname:grasslandmed" size="mapsize:medium" biome="grassland" location="sandiego"/>
+	</worldcampscen4>
+	<worldcampscen5>
+		<ZTMapData version="0" name="mapname:grasslandmed" size="mapsize:medium" biome="grassland" location="sandiego" />
+	</worldcampscen5>
+	<xp1endangered1>
+		<ZTMapData version="0" name="mapname:rainforestsml" size="mapsize:small" biome="tropicalrainforest" location="panama" protected="" xpack="0" />
+	</xp1endangered1>
+	<xp1endangered2>
+		<ZTMapData version="0" name="mapname:grasslandmed" size="mapsize:medium" biome="grassland" location="stlouis" />
+	</xp1endangered2>
+	<xp1endangered3>
+		<ZTMapData version="0" name="mapname:temperatemed" size="mapsize:medium" biome="temperateforest" location="berlin" />
+	</xp1endangered3>
+	<xp1photosafari1>
+		<ZTMapData version="0" name="mapname:wetlandmed" size="mapsize:medium" biome="wetlands" location="everglades" protected="" xpack="0" />
+	</xp1photosafari1>
+	<xp1photosafari2>
+		<ZTMapData version="0" name="mapname:rainforestmed" size="mapsize:medium" biome="tropicalrainforest" location="vietnam" />
+	</xp1photosafari2>
+	<xp1photosafari3>
+		<ZTMapData version="0" name="mapname:temperatemed" size="mapsize:medium" biome="temperateforest" location="atlanta" />
+	</xp1photosafari3>
+	<xp1transportation1>
+		<ZTMapData version="0" name="mapname:savannahmed" size="mapsize:medium" biome="savannah" location="kenya" protected="" xpack="0" />
+	</xp1transportation1>
+	<xp1transportation2>
+		<ZTMapData version="0" name="mapname:rainforestmed" size="mapsize:medium" biome="tropicalrainforest" location="saopaulo" protected="" xpack="0" />
+	</xp1transportation2>
+	<xp1transportation3>
+		<ZTMapData version="0" name="mapname:cityzoomed" size="mapsize:medium" biome="grassland" location="sanfrancisco" protected="" xpack="0" />
+	</xp1transportation3>
+	<xp1tutorialone>
+		<ZTMapData version="0" name="mapname:borealsml" size="mapsize:small" biome="borealforest" location="boreal1" protected="" xpack="0" />
+	</xp1tutorialone>
+	<xp1tutorialthree>
+		<ZTMapData version="0" name="mapname:desertsml" size="mapsize:small" biome="desert" location="desert1" protected="" xpack="0" />
+	</xp1tutorialthree>
+	<xp1tutorialtwo>
+		<ZTMapData version="0" name="mapname:temperatesml" size="mapsize:small" biome="temperateforest" location="temperate1" />
+	</xp1tutorialtwo>	
+	<zktrainingscen1>
+		<ZTMapData version="0" name="mapname:cityzoosml" size="mapsize:small" biome="grassland" location="denver" />
+	</zktrainingscen1>
+	<zktrainingscen2>
+		<ZTMapData version="0" name="mapname:grasslandsml" size="mapsize:small" biome="grassland" location="sandiego" />
+	</zktrainingscen2>
+	<zktrainingscen3>
+		<ZTMapData version="0" name="mapname:cityzoomed" size="mapsize:medium" biome="grassland" location="denver" />
+	</zktrainingscen3>
+	<cp1africa1>
+		<ZTMapData version="0" name="mapname:savannahed" size="mapsize:medium" biome="savannah" location="burkinafaso" protected="" xpack="101"/>
+	</cp1africa1>
+	<cp1africa2>
+		<ZTMapData version="0" name="mapname:scrubmed" size="mapsize:medium" biome="scrub" location="scrub1" protected="" xpack="101"/>
+	</cp1africa2>	
+	<cp1africa3>
+		<ZTMapData version="0" name="mapname:scrubmed" size="mapsize:medium" biome="scrub" location="scrub1" protected="" xpack="101"/>
+	</cp1africa3>
+	<cp1tutorialone>
+		<ZTMapData version="0" name="mapname:desertsml" size="mapsize:small" biome="desert" location="sahara_desert" protected="" xpack="101" />
+	</cp1tutorialone>	
+	<pdlc1dinozoo1>
+		<ZTMapData version="0" name="mapname:grasslandmed" size="mapsize:medium" biome="grassland" location="sandiego" />
+	</pdlc1dinozoo1>
+	<xp2marineanimals1>
+		<ZTMapData version="0" name="mapname:temperatemed" size="mapsize:medium" biome="temperateforest" location="atlanta" />
+	</xp2marineanimals1>
+	<xp2marineanimals2>
+		<ZTMapData version="0" name="mapname:coastalmed" size="mapsize:medium" biome="coastal" location="capecod" />
+	</xp2marineanimals2>
+	<xp2marineanimals3>
+		<ZTMapData version="0" name="mapname:rainforestmed" size="mapsize:medium" biome="tropicalrainforest" location="rainforest1" />
+	</xp2marineanimals3>
+	<xp2marineanimals4>
+		<ZTMapData version="0" name="mapname:borealmed" size="mapsize:medium" biome="borealforest" location="longbeach" />
+	</xp2marineanimals4>
+	<xp2marineshows1>
+		<ZTMapData version="0" name="mapname:coastalmed" size="mapsize:medium" biome="coastal" location="everglades" />
+	</xp2marineshows1>
+	<xp2marineshows2>
+		<ZTMapData version="0" name="mapname:cityzoomed" size="mapsize:medium" biome="grassland" location="stlouis" />
+	</xp2marineshows2>	
+	<xp2marineshows3>
+		<ZTMapData version="0" name="mapname:scrubmed" size="mapsize:medium" biome="scrub" location="sydney" />
+	</xp2marineshows3>
+	<xp2marineshows4>
+		<ZTMapData version="0" name="mapname:temperatemed" size="mapsize:medium" biome="temperateforest" location="temperate1" />
+	</xp2marineshows4>	
+	<xp2marineshows5>
+		<ZTMapData version="0" name="mapname:borealmed" size="mapsize:medium" biome="borealforest" location="moscow" />
+	</xp2marineshows5>	
+	<xp2tutorialone>
+		<ZTMapData version="0" name="mapname:grasslandmed" size="mapsize:medium" biome="grassland" location="denver" />
+	</xp2tutorialone>
+	<xp2tutorialtwo>
+		<ZTMapData version="0" name="mapname:grasslandmed" size="mapsize:medium" biome="grassland" location="denver" />
+	</xp2tutorialtwo>
+	<xp2tutorialthree>
+		<ZTMapData version="0" name="mapname:grasslandmed" size="mapsize:medium" biome="grassland" location="denver" />
+	</xp2tutorialthree>		
+	<xp2tutorialfour>
+		<ZTMapData version="0" name="mapname:grasslandmed" size="mapsize:medium" biome="grassland" location="sandiego" />
+	</xp2tutorialfour>
+	<xp2tutorialfive>
+		<ZTMapData version="0" name="mapname:reefmed" size="mapsize:medium" biome="reef" location="queensland" />
+	</xp2tutorialfive>	
+	<cp2scen1>
+		<ZTMapData version="0" name="mapname:junglepool" size="mapsize:small" biome="tropicalrainforest" location="cp2scen1" protected="" xpack="3" />
+	</cp2scen1>
+	<cp2scen2>
+		<ZTMapData version="0" name="mapname:temperatemed" size="mapsize:medium" biome="temperateforest" location="cp2scen2" protected="" xpack="3" />
+	</cp2scen2>
+	<cp2scen3>
+		<ZTMapData version="0" name="mapname:cityzoomed" size="mapsize:medium" biome="grassland" location="denver" xpack="3" />
+	</cp2scen3>
+	<cp2scen4>
+		<ZTMapData version="0" name="mapname:savannahmed" size="mapsize:medium" biome="savannah" location="savannah1" protected="" xpack="3" />
+	</cp2scen4>
+	<cp2scen5>
+		<ZTMapData version="0" name="mapname:rockies" size="mapsize:medium" biome="borealforest" location="montana" protected="" xpack="3" />
+	</cp2scen5>
+	<cp2scen6>
+		<ZTMapData version="0" name="mapname:rainforestmed" size="mapsize:medium" biome="tropicalrainforest" location="rainforest1" protected="" xpack="3" />
+	</cp2scen6>	
+	<cp2tutorialone>
+		<ZTMapData version="0" name="mapname:cityzoomed" size="mapsize:medium" biome="grassland" location="denver" protected="" xpack="3" />
+	</cp2tutorialone>
+	<cp2tutorialtwo>
+		<ZTMapData version="0" name="mapname:cityzoomed" size="mapsize:medium" biome="grassland" location="denver" protected="" xpack="3" />
+	</cp2tutorialtwo>
+	<cp2tutorialthree>
+		<ZTMapData version="0" name="mapname:cityzoomed" size="mapsize:medium" biome="grassland" location="denver" protected="" xpack="3" />
+	</cp2tutorialthree>	
+	<pdlc1dinozoo1>
+		<ZTMapData version="0" name="mapname:grasslandmed" size="mapsize:medium" biome="grassland" location="sandiego" />
+	</pdlc1dinozoo1>	
+</maps>
