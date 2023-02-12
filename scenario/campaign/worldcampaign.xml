@@ -1,0 +1,7 @@
+<BFCampaign name="TheWorldLabels:WorldCampaignshort">
+   <entry name="TheWorldLabels:WorldCampaignS5" short="TheWorldLabels:WorldCampaignS5short" key="worldcampaignscenario5" scenario="scenario\goals\worldcampaignscen5.xml" map="worldcampscen5" cash="15000" difficulty="difficulty:medium" description="TheWorld:TheWorldsBiomesoverviewshort" state="unlocked"/>
+   <entry name="TheWorldLabels:WorldCampaignS3" short="TheWorldLabels:WorldCampaignS3short" key="worldcampaignscenario3" scenario="scenario\goals\worldcampaignscen3.xml" map="worldcampscen3" cash="15000" difficulty="difficulty:medium" description="TheWorld:AfricanAnimalsoverviewshort" state="locked"/>
+   <entry name="TheWorldLabels:WorldCampaignS1" short="TheWorldLabels:WorldCampaignS1short" key="worldcampaignscenario1" scenario="scenario\goals\worldcampaignscen1.xml" map="worldcampscen1" cash="20000" difficulty="difficulty:hard" description="TheWorld:AmericanAnimalsoverviewshort" state="locked"/>
+   <entry name="TheWorldLabels:WorldCampaignS2" short="TheWorldLabels:WorldCampaignS2short" key="worldcampaignscenario2" scenario="scenario\goals\worldcampaignscen2.xml" map="worldcampscen2" cash="25000" difficulty="difficulty:hard" description="TheWorld:AsianAnimalsoverviewshort" state="locked"/>
+   <entry name="TheWorldLabels:WorldCampaignS4" short="TheWorldLabels:WorldCampaignS4short" key="worldcampaignscenario4" scenario="scenario\goals\worldcampaignscen4.xml" map="worldcampscen4" cash="30000" difficulty="difficulty:hard" description="TheWorld:HugeBiomeoverviewshort" state="unlocked"/>
+</BFCampaign>

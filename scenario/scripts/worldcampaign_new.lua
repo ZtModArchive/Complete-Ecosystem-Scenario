@@ -14,7 +14,7 @@ end
 
 failworldcampaignscen4 = function()
 -- if condition fulfilled, show the alternative message
-   if (guestresponse) ~= nil then
+   if ("guest response to animal attack") ~= nil then
 		showscenariofail("TheWorld:HugeBiomeFailureoverview", "worldcampaignscenario4")
    else
 		showscenariofail("TheWorld:HugeBiomeFailureWitnessedoverview", "worldcampaignscenario4")
