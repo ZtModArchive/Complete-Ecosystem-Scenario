@@ -20,6 +20,7 @@ The mod might not work with all versions of _Zoo Tycoon 2_.
 |---------------------------------|----------------------------------------------------------------------------|
 | Extinct Animals <sup>_1_</sup>  | ![Tested](https://img.shields.io/badge/32.10.00.0009-Untested-lightgrey)   |
 | Ultimate Collection             | ![Tested](https://img.shields.io/badge/33.05.00.0002UO-Untested-lightgrey) |
+
 _<sup>1</sup> This includes the installation of all prior expansions_
 
 ### Setting the scenario preview image
