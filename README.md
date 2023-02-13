@@ -30,7 +30,7 @@ _<sup>*</sup> Except for beta releases, this includes the installation of all pr
 ### Setting the scenario preview image
 
 In order to properly display the scenario preview image, put `worldcampscen4.jpg` in the following sub-directory in the root directory of your _Zoo Tycoon 2_ installation: `maps/scenario`.
-Alternatively you may add it to your `.z2f` but don't compress the jpg file. Castor does not support no-compression addition to z2f archives.
+Alternatively you may add it to your `.z2f` but don't compress the jpg file. Castor versions before 4.2.1 do not support no-compression addition to `.z2f` archives.
 
 ## Usage
 
@@ -54,7 +54,7 @@ or if you want to debug and attach _Zoo Tycoon 2_ to your console output
 castor serve
 ```
 
-**CAUTION:** Castor may not support adding the jpg scenario preview image, because it needs to be added as an uncompressed file in order to function properly.
+**CAUTION:** Only Castor version 4.2.1 or higher supports adding the jpg scenario preview image, because it needs to be added as an uncompressed file in order to function properly.
 
 ## Credits
 
