@@ -30,8 +30,6 @@
     "xpinfo"
   ],
   "ExcludeFolders": [],
-  "Dependencies": [
-    "ZtModArchive/ArluqTools/v2.7"
-  ],
+  "Dependencies": [],
   "DevDependencies": []
 }

@@ -1,27 +1,44 @@
 <ZTScenarioMgr interval="2" name="mgr" state="0" chain="true" allsuccess="true" sticky="true" optional="false">
-	<info locid="TheWorld:HugeBiomeintro"/>
+	<info locid="TheWorld:HugeBiomeintro" />
 	<children>
 		<BFScenarioRule hidden="1" name="setinitialzoostate" state="0" sticky="true">
 			<evaluate>
 				<BFScenarioScriptAction script="scenario/scripts/worldcampaign.lua" entry="setinitialzoostate" />
 			</evaluate>
 		</BFScenarioRule>
-		<BFScenarioGroup hidden ="0" name="hugebiome" state="0" chain="false" allsuccess="true" sticky="true">
+		<BFScenarioGroup hidden="1" name="hugebiome" state="0" chain="true" allsuccess="true" sticky="true">
 			<info type="primary">
 				<neutral overview="TheWorld:HugeBiomeoverview" />
-				<success locid="TheWorld:HugeBiomeresult" overview = "HugeBiomeSuccessoverview"/>
-				<failure locid="TheWorld:HugeBiomeFailureoverview"/>
-			</info>	
+				<success locid="TheWorld:HugeBiomeresult" overview="HugeBiomeSuccessoverview" />
+				<failure locid="TheWorld:HugeBiomeFailureoverview" />
+			</info>
 			<success>
 				<BFScenarioScriptAction script="scenario/scripts/worldcampaign_new.lua" entry="completeworldcampaignscen4" />
 			</success>
-			
 			<children>
-				<BFScenarioRule name="HugeBiomeoverall" hidden = "0" state="0" sticky="true">
+				<BFScenarioRule name="HugeBiomesetup" hidden="0" state="0" sticky="true">
+					<info type="primary" locid="TheWorld:HugeBiomeoverviewshort">
+						<neutral locid="TheWorld:HugeBiomeoverviewshort" />
+						<success locid="TheWorld:HugeBiomeoverviewshort" />
+						<failure locid="TheWorld:HugeBiomeoverallgoalfailed" overview="HugeBiomeFailureoverview" />
+					</info>
+					<evaluate>
+						<BFScenarioScriptAction script="scenario/scripts/worldcampaign_new.lua" entry="evalhabitatsetup" />
+					</evaluate>
+					<success>
+						<BFScenarioScriptAction script="scenario/scripts/ui.lua" entry="showprimarygoals" />
+					</success>
+					<failure>
+						<BFScenarioScriptAction script="scenario/scripts/worldcampaign_new.lua" entry="failworldcampaignscen4" />
+					</failure>
+					<children>
+					</children>
+				</BFScenarioRule>
+				<BFScenarioRule name="HugeBiomeoverall" hidden="1" state="0" sticky="true">
 					<info type="primary" locid="TheWorld:HugeBiomeoverallgoal">
 						<neutral locid="TheWorld:HugeBiomeoverallgoal" />
 						<success locid="TheWorld:HugeBiomeoverallgoalOK" />
-						<failure locid="TheWorld:HugeBiomeoverallgoalfailed" overview = "HugeBiomeFailureoverview" />
+						<failure locid="TheWorld:HugeBiomeoverallgoalfailed" overview="HugeBiomeFailureoverview" />
 					</info>
 					<evaluate>
 						<BFScenarioScriptAction script="scenario/scripts/worldcampaign_new.lua" entry="evalhugebiome" />
@@ -31,11 +48,9 @@
 					</success>
 					<failure>
 						<BFScenarioScriptAction script="scenario/scripts/worldcampaign_new.lua" entry="failworldcampaignscen4" />
-					</failure>					
+					</failure>
 				</BFScenarioRule>
 			</children>
 		</BFScenarioGroup>
-		
-
 	</children>
 </ZTScenarioMgr>
