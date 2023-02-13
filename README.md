@@ -30,7 +30,12 @@ In order to properly display the scenario preview image, put `worldcampscen4.jpg
 
 ## Credits
 
-- _Apodemus_ - Programming
+### Programming
+
+- [_Apodemus_](https://github.com/Zt-freak)
+- [_LoliJuicy_](https://github.com/LoliJuicy)
+
+### Special thanks
+
 - _Blue Fang Games_ - Map design, scenario concept and the creation of _Zoo Tycoon 2_.
-- _LoliJuicy_ - Programming
 - _March42_ - Publishing the Zoo Tycoon 2 Beta 20.09.00.0005
