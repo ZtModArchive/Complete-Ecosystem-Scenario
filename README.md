@@ -16,10 +16,11 @@ Either take the latest release or build your own `.z2f` and put the file in your
 
 The mod might not work with all versions of _Zoo Tycoon 2_.
 
-| Expansion                       | Status                                                                     |
-|---------------------------------|----------------------------------------------------------------------------|
-| Extinct Animals <sup>_1_</sup>  | ![Tested](https://img.shields.io/badge/32.10.00.0009-Untested-lightgrey)   |
-| Ultimate Collection             | ![Tested](https://img.shields.io/badge/33.05.00.0002UO-Untested-lightgrey) |
+| Expansion | Status |
+|-----------|--------|
+| Zoo Tycoon 2 | ![Tested](https://img.shields.io/badge/20.09.00.0005--beta-Untested-lightgrey)<br/>![Tested](https://img.shields.io/badge/20.10.00.0006-Untested-lightgrey)
+| Marine Mania | ![Tested](https://img.shields.io/badge/30.06.00.0001--beta-Untested-lightgrey)<br/>![Tested](https://img.shields.io/badge/30.07.00.0003--beta-Untested-lightgrey)
+| Extinct Animals <sup>_1_</sup>  | ![Tested](https://img.shields.io/badge/32.10.00.0009-Untested-lightgrey)<br/>![Tested](https://img.shields.io/badge/33.05.00.0002UO-Untested-lightgrey)  |
 
 _<sup>1</sup> This includes the installation of all prior expansions_
 
