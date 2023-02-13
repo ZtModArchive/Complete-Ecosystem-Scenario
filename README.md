@@ -30,7 +30,7 @@ _<sup>*</sup> Except for beta releases, this includes the installation of all pr
 ### Setting the scenario preview image
 
 In order to properly display the scenario preview image, put `worldcampscen4.jpg` in the following sub-directory in the root directory of your _Zoo Tycoon 2_ installation: `maps/scenario`.
-
+Alternatively you may add it to your `.z2f` but don't compress the jpg file. Castor does not support no-compression addition to z2f archives.
 
 ## Usage
 
@@ -38,7 +38,9 @@ This mod adds in a cut scenario under the _The Globe_ campaign series, it is the
 
 ## Building
 
-A vast majority of _Zoo Tycoon 2_ mods are either `.z2f` or `.zip` archives, this mod is no different. You can use Microsoft Windows' own file zipper to create zips. **CAUTION:** other zipping programs such as 7-Zip or WinRAR can compress to a `.zip` that _Zoo Tycoon 2_ does not support.
+A vast majority of _Zoo Tycoon 2_ mods are either `.z2f` or `.zip` archives, this mod is no different. You can use Microsoft Windows' own file zipper to create zips.
+
+**CAUTION:** other zipping programs such as 7-Zip or WinRAR can compress to a `.zip` that _Zoo Tycoon 2_ does not support.
 
 Alternatively, you can use [Castor](https://github.com/ZtModArchive/Castor) to build mods. simply use the command
 
@@ -51,6 +53,8 @@ or if you want to debug and attach _Zoo Tycoon 2_ to your console output
 ```bash
 castor serve
 ```
+
+**CAUTION:** Castor may not support adding the jpg scenario preview image, because it needs to be added as an uncompressed file in order to function properly.
 
 ## Credits
 
