@@ -28,6 +28,27 @@ _<sup>1</sup> This includes the installation of all prior expansions_
 
 In order to properly display the scenario preview image, put `worldcampscen4.jpg` in the following sub-directory in the root directory of your _Zoo Tycoon 2_ installation: `maps/scenario`.
 
+
+## Usage
+
+This mod adds in a cut scenario under the _The Globe_ campaign series, it is the last one in this campaign. Completion of the prior scenarios of this campaign is required.
+
+## Building
+
+A vast majority of _Zoo Tycoon 2_ mods are either `.z2f` or `.zip` archives, this mod is no different. You can use Microsoft Windows' own file zipper to create zips. **CAUTION:** other zipping programs such as 7-Zip or WinRAR can compress to a `.zip` that _Zoo Tycoon 2_ does not support.
+
+Alternatively, you can use [Castor](https://github.com/ZtModArchive/Castor) to build mods. simply use the command
+
+```bash
+castor build
+```
+
+or if you want to debug and attach _Zoo Tycoon 2_ to your console output
+
+```bash
+castor serve
+```
+
 ## Credits
 
 ### Programming
