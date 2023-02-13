@@ -27,9 +27,9 @@ The mod might not work with all versions of _Zoo Tycoon 2_.
 
 _<sup>*</sup> Except for beta releases, this includes the installation of all prior expansions._
 
-### Setting the scenario preview image
+<del>### Setting the scenario preview image</del>
 
-In order to properly display the scenario preview image, put `worldcampscen4.jpg` in the following sub-directory in the root directory of your _Zoo Tycoon 2_ installation: `maps/scenario`.
+<del>In order to properly display the scenario preview image, put `worldcampscen4.jpg` in the following sub-directory in the root directory of your _Zoo Tycoon 2_ installation: `maps/scenario`.</del> This is no longer required as the issue has been fixed.
 
 
 ## Usage
