@@ -2,12 +2,17 @@
 
 [![Validate](https://github.com/ZtModArchive/Complete-Ecosystem-Scenario/actions/workflows/validate.yml/badge.svg)](https://github.com/ZtModArchive/Complete-Ecosystem-Scenario/actions/workflows/validate.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a6362bbac57d4243a1be0b8cb31c8ace)](https://www.codacy.com/gh/ZtModArchive/Complete-Ecosystem-Scenario/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ZtModArchive/Complete-Ecosystem-Scenario&amp;utm_campaign=Badge_Grade)
+[![License](https://img.shields.io/github/license/ZtModArchive/Complete-Ecosystem-Scenario)](https://github.com/ZtModArchive/Complete-Ecosystem-Scenario/blob/main/LICENSE)
 
 > "_an animal was ...EATEN! (or just attacked : ) would be nice if we could differentiate the failure message depending on whether the eaten event was viewed by a guest or not..._"
 >
 > \- Unknown Zoo Tycoon 2 developer
 
 This is an attempt at remaking a scrapped scenario from _Zoo Tycoon 2_, which involved putting both savannah herbivores and carnivores together in the same habitat.
+
+## License
+
+The following code, except for Microsoft's work (e.g. `worldcampscen4.dat` and `worldcampscen4.jpg`), is available under the GNU General Public License.
 
 ## Installation
 
