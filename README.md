@@ -12,7 +12,7 @@ This is an attempt at remaking a scrapped scenario from _Zoo Tycoon 2_, which in
 
 ## License
 
-The following code, except for Microsoft's work (e.g. `worldcampscen4.dat` and `worldcampscen4.jpg`, is available under the GNU General Public License.
+The following code, except for Microsoft's work (e.g. `worldcampscen4.dat` and `worldcampscen4.jpg`), is available under the GNU General Public License.
 
 ## Installation
 
