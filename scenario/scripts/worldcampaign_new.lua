@@ -6,6 +6,10 @@ include "scenario/scripts/needs.lua"
 include "scenario/scripts/token.lua"
 include "scenario/scripts/ui.lua"
 
+HERBIVORE_QUOTA = 6
+CARNIVORE_QUOTA = 4
+MONTH_QUOTA = 4
+
 --- @return number
 evalhabitatsetup = function()
     if getglobalvar("HERBIVOREIDS") == nil then
@@ -16,7 +20,7 @@ evalhabitatsetup = function()
         local herbivores = split(getglobalvar("HERBIVOREIDS"), ",")
         local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
 
-        if table.getn(herbivores) >= 6 and table.getn(carnivores) >= 4 then
+        if table.getn(herbivores) >= HERBIVORE_QUOTA and table.getn(carnivores) >= CARNIVORE_QUOTA then
             return 1
         end
     end
@@ -38,8 +42,8 @@ evalhugebiome = function(argument)
         return -1
     end
 
-    if (argument.stayopentimer + 4 <= getCurrentMonth() and argument.stayopentimerday <= getCurrentTimeOfDay()) then
-        if countSavannahAnimalsInSameHabitat() >= 6 then
+    if (argument.stayopentimer + MONTH_QUOTA <= getCurrentMonth() and argument.stayopentimerday <= getCurrentTimeOfDay()) then
+        if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then
             return 1
         end
         return -1
