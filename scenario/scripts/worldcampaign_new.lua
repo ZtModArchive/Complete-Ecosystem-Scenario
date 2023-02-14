@@ -8,6 +8,10 @@ include "scenario/scripts/ui.lua"
 
 --- @return number
 evalhabitatsetup = function()
+    if getglobalvar("HERBIVOREIDS") == nil then
+        giveCash(500000)
+    end
+    
     if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
         local herbivores = split(getglobalvar("HERBIVOREIDS"), ",")
         local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
@@ -17,7 +21,7 @@ evalhabitatsetup = function()
         end
     end
 
-    setSavannahAnimalsLists()
+    setSavannahAnimalsLists(false)
     return 0
 end
 
@@ -26,10 +30,9 @@ evalhugebiome = function(argument)
     if argument.stayopentimer == nil then
         argument.stayopentimer = getCurrentMonth()
         argument.stayopentimerday = getCurrentTimeOfDay()
-    end
 
-    print(argument.stayopentimer.. " - "..getCurrentMonth())
-    io.flush()
+        setSavannahAnimalsLists(true)
+    end
 
     if not checkHerbivoresAlive() then
         return -1
@@ -63,8 +66,9 @@ failworldcampaignscen4 = function()
 end
 
 --- Sets global variables CARNIVORE_IDS and HERBIVORE_IDS
+--- @param disableRelease bool
 --- @return void
-setSavannahAnimalsLists = function()
+setSavannahAnimalsLists = function(disableRelease)
     local savannahAnimals = getAnimalsFromBiome("savannah")
     local carnivoreIds = ""
     local herbivoreIds = ""
@@ -77,6 +81,11 @@ setSavannahAnimalsLists = function()
         local animal = resolveTable(savannahAnimals[i].value)
 
         if animal:BFG_GET_ATTR_BOOLEAN("b_Carnivore") then
+            if disableRelease then
+                animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
+                animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
+            end
+
             if carnivoreIds == "" then
                 carnivoreIds = carnivoreIds .. getID(animal)
             else
@@ -85,6 +94,11 @@ setSavannahAnimalsLists = function()
         end
 
         if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") then
+            if disableRelease then
+                animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
+                animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
+            end
+
             if herbivoreIds == "" then
                 herbivoreIds = herbivoreIds .. getID(animal)
             else
@@ -121,7 +135,7 @@ checkHerbivoresAlive = function()
         local stillExists = false
 
         for j = 1, table.getn(herbivoreIds) do
-            if herbivoreIds[j] == savedHerbivoreId then
+            if tonumber(herbivoreIds[j]) == tonumber(savedHerbivoreId) then
                 stillExists = true
             end
         end
