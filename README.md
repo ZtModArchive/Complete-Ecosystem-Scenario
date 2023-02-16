@@ -39,7 +39,7 @@ Alternatively you may add it to your `.z2f` but don't compress the jpg file. Cas
 
 ## Usage
 
-This mod adds in a cut scenario under the _The Globe_ campaign series, it is the last one in this campaign. Completion of the prior scenarios of this campaign is required.
+This mod adds in a cut scenario under the _The Globe_ campaign series, it is the last one in this campaign.
 
 ## Building
 
