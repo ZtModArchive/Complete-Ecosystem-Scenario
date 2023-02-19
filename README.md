@@ -67,6 +67,7 @@ castor serve
 
 - [_Apodemus_](https://github.com/Zt-freak)
 - [_LoliJuicy_](https://github.com/LoliJuicy)
+- [_Thom_](https://github.com/TheThommerd)
 
 ### Special thanks
 
