@@ -65,11 +65,11 @@ castor serve
 
 ### Programming
 
-  - [_Apodemus_](https://github.com/Zt-freak)
-  - [_LoliJuicy_](https://github.com/LoliJuicy)
-  - [_Thom_](https://github.com/TheThommerd)
+-  [_Apodemus_](https://github.com/Zt-freak)
+-  [_LoliJuicy_](https://github.com/LoliJuicy)
+-  [_Thom_](https://github.com/TheThommerd)
 
 ### Special thanks
 
-  - _Blue Fang Games_ - Map design, scenario concept and the creation of _Zoo Tycoon 2_.
-  - _March42_ - Publishing the Zoo Tycoon 2 Beta 20.09.00.0005
+-  _Blue Fang Games_ - Map design, scenario concept and the creation of _Zoo Tycoon 2_.
+-  _March42_ - Publishing the Zoo Tycoon 2 Beta 20.09.00.0005
