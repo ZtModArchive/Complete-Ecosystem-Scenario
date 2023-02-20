@@ -21,6 +21,9 @@ evalhabitatsetup = function()
         local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
 
         if table.getn(herbivores) >= HERBIVORE_QUOTA and table.getn(carnivores) >= CARNIVORE_QUOTA then
+            -- setRuleState("HugeBiomeoverall", "neutral")
+            -- showRule("HugeBiomeoverall")
+            -- completeshowoverview()
             return 1
         end
     end
@@ -31,6 +34,12 @@ end
 
 --- @return number
 evalhugebiome = function(argument)
+    local monthDiff = getglobalvar("MONTHDIFFERENCE")
+    if monthDiff ~= tostring(getCurrentMonth()) then
+        giveCash(2000)
+        setglobalvar("MONTHDIFFERENCE", tostring(getCurrentMonth()))
+    end
+        
     if argument.stayopentimer == nil then
         argument.stayopentimer = getCurrentMonth()
         argument.stayopentimerday = getCurrentTimeOfDay()
