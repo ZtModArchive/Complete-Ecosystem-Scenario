@@ -28,7 +28,7 @@ evalhabitatsetup = function()
         end
     end
 
-    setSavannahAnimalsLists(false)
+    setSavannahAnimalsLists()
     return 0
 end
 
@@ -38,13 +38,6 @@ evalhugebiome = function(argument)
     if monthDiff ~= tostring(getCurrentMonth()) then
         giveCash(2000)
         setglobalvar("MONTHDIFFERENCE", tostring(getCurrentMonth()))
-    end
-        
-    if argument.stayopentimer == nil then
-        argument.stayopentimer = getCurrentMonth()
-        argument.stayopentimerday = getCurrentTimeOfDay()
-
-        setSavannahAnimalsLists(true)
     end
 
     if not checkHerbivoresAlive() then
@@ -58,6 +51,7 @@ evalhugebiome = function(argument)
         return -1
     end
 
+    setSavannahAnimalsLists()
     return 0
 end
 
@@ -81,7 +75,7 @@ end
 --- Sets global variables CARNIVORE_IDS and HERBIVORE_IDS
 --- @param disableRelease bool
 --- @return void
-setSavannahAnimalsLists = function(disableRelease)
+setSavannahAnimalsLists = function()
     local savannahAnimals = getAnimalsFromBiome("savannah")
     local carnivoreIds = ""
     local herbivoreIds = ""
@@ -94,10 +88,8 @@ setSavannahAnimalsLists = function(disableRelease)
         local animal = resolveTable(savannahAnimals[i].value)
 
         if animal:BFG_GET_ATTR_BOOLEAN("b_Carnivore") then
-            if disableRelease then
-                animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
-                animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
-            end
+            animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
+            animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
 
             if carnivoreIds == "" then
                 carnivoreIds = carnivoreIds .. getID(animal)
@@ -107,10 +99,8 @@ setSavannahAnimalsLists = function(disableRelease)
         end
 
         if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") then
-            if disableRelease then
-                animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
-                animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
-            end
+            animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
+            animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
 
             if herbivoreIds == "" then
                 herbivoreIds = herbivoreIds .. getID(animal)
