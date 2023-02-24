@@ -17,6 +17,11 @@ evalhabitatsetup = function()
     end
     
     if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
+
+        if not checkHerbivoresAlive() then
+            return -1
+        end
+        
         local herbivores = split(getglobalvar("HERBIVOREIDS"), ",")
         local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
 
