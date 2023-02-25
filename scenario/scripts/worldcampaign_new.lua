@@ -15,13 +15,14 @@ evalhabitatsetup = function()
     if getglobalvar("HERBIVOREIDS") == nil then
         giveCash(500000)
     end
+
+    if checkForHerbivoreCarcasses() then
+        return -1
+    end
     
     if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
-
-        if not checkHerbivoresAlive() then
-            return -1
-        end
         
+
         local herbivores = split(getglobalvar("HERBIVOREIDS"), ",")
         local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
 
@@ -45,15 +46,16 @@ evalhugebiome = function(argument)
         setglobalvar("MONTHDIFFERENCE", tostring(getCurrentMonth()))
     end
 
-    if not checkHerbivoresAlive() then
+    if checkForHerbivoreCarcasses() then
+        return -1
+    end
+
+    if countSavannahAnimalsInSameHabitat() < HERBIVORE_QUOTA then
         return -1
     end
 
     if (argument.stayopentimer + MONTH_QUOTA <= getCurrentMonth() and argument.stayopentimerday <= getCurrentTimeOfDay()) then
-        if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then
-            return 1
-        end
-        return -1
+        return 1
     end
 
     setSavannahAnimalsLists()
@@ -89,12 +91,14 @@ setSavannahAnimalsLists = function()
         return
     end
 
+    local herbivoreIndex = 1
     for i = 1, table.getn(savannahAnimals) do
         local animal = resolveTable(savannahAnimals[i].value)
 
         if animal:BFG_GET_ATTR_BOOLEAN("b_Carnivore") then
             animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
             animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
+            animal:BFG_SET_ATTR_BOOLEAN("b_showCrate", false)
 
             if carnivoreIds == "" then
                 carnivoreIds = carnivoreIds .. getID(animal)
@@ -106,17 +110,74 @@ setSavannahAnimalsLists = function()
         if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") then
             animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
             animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
+            animal:BFG_SET_ATTR_BOOLEAN("b_showCrate", false)
+            animal:BFG_SET_ATTR_BOOLEAN("b_showPickup", false)
 
             if herbivoreIds == "" then
                 herbivoreIds = herbivoreIds .. getID(animal)
             else
                 herbivoreIds = herbivoreIds .. "," .. getID(animal)
             end
+
+            setglobalvar("HERBIVORE"..herbivoreIndex, animal:BFG_GET_ATTR_STRING("s_name"))
+            setglobalvar("HERBIVOREID"..herbivoreIndex, ""..getID(animal))
+            herbivoreIndex = herbivoreIndex + 1
         end
     end
 
     setglobalvar("CARNIVOREIDS", carnivoreIds)
     setglobalvar("HERBIVOREIDS", herbivoreIds)
+end
+
+--- Checks if all there is a carcass belonging to a savannah herbivore present
+--- @return bool
+checkForHerbivoreCarcasses = function()
+    local endOfHerbivoreNames = false
+    local carcasses = findType("Carcass_Meat")
+
+    if carcasses == nil then
+        return false
+    end
+
+    local savannahAnimals = getAnimalsFromBiome("savannah")
+    local herbivoreIds = {}
+    for i = 1, table.getn(savannahAnimals) do
+        local animal = resolveTable(savannahAnimals[i].value)
+        if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") then
+            table.insert(herbivoreIds, getID(animal))
+        end
+    end
+
+    local herbivoreIndex = 1
+    while(endOfHerbivoreNames == false) do
+
+        if getglobalvar("HERBIVORE"..herbivoreIndex) == nil or getglobalvar("HERBIVORE"..herbivoreIndex) == "" then
+            endOfHerbivoreNames = true
+            return false
+        end
+        
+        for i = 1, table.getn(carcasses) do
+            local carcass = resolveTable(carcasses[i].value)
+
+            if string.find(carcass:BFG_GET_ATTR_STRING("s_name"), getglobalvar("HERBIVORE"..herbivoreIndex)) then
+                local herbivoreWasFound = false
+                for j = 1, table.getn(herbivoreIds) do
+                    if herbivoreIds[j] == tonumber(getglobalvar("HERBIVOREID"..herbivoreIndex)) then
+                        herbivoreWasFound = true
+                    end
+                end
+
+                if not herbivoreWasFound then
+                    return true
+                end
+            end
+        end
+
+        setglobalvar("HERBIVORE"..herbivoreIndex, "")
+        setglobalvar("HERBIVOREID"..herbivoreIndex, "")
+
+        herbivoreIndex = herbivoreIndex + 1
+    end
 end
 
 --- Checks if all savannah herbivores from the global HERBIVORE_IDS are still present
