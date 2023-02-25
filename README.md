@@ -38,9 +38,14 @@ _<sup>*</sup> Except for beta releases, this includes the installation of all pr
 In order to properly display the scenario preview image, put `worldcampscen4.jpg` in the following sub-directory in the root directory of your _Zoo Tycoon 2_ installation: `maps/scenario`.
 Alternatively you may add it to your `.z2f` but don't compress the jpg file. Castor versions before 4.2.1 do not support no-compression addition to `.z2f` archives.
 
-## Usage
+## Features
 
 This mod adds in a cut scenario under the _The Globe_ campaign series, it is the last one in this campaign.
+
+-   [x] Check if 6 savannah herbivores and 4 savannah carnivores are in the same habitat.
+-   [x] Check if a savannah herbivore has been attacked and killed.
+  -   [ ] Check if a guest has witnessed the attack.
+-   [x] Check if a 4 months have passed with enough savannah animals sharing the same habitat
 
 ## Building
 
