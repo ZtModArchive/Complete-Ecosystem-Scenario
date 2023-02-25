@@ -27,9 +27,9 @@ evalhabitatsetup = function()
         local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
 
         if table.getn(herbivores) >= HERBIVORE_QUOTA and table.getn(carnivores) >= CARNIVORE_QUOTA then
-            -- setRuleState("HugeBiomeoverall", "neutral")
-            -- showRule("HugeBiomeoverall")
-            -- completeshowoverview()
+            setRuleState("HugeBiomeoverall", "neutral")
+            showRule("HugeBiomeoverall")
+            completeshowoverview()
             return 1
         end
     end
@@ -40,22 +40,30 @@ end
 
 --- @return number
 evalhugebiome = function(argument)
-    local monthDiff = getglobalvar("MONTHDIFFERENCE")
-    if monthDiff ~= tostring(getCurrentMonth()) then
+    local startingMonth = getglobalvar("STARTINGMONTH")
+    local allowanceMonth = getglobalvar("ALLOWANCEMONTH")
+
+    if startingMonth == nil then
+        setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
+        startingMonth = getglobalvar("STARTINGMONTH")
+    end
+
+    if tostring(getCurrentMonth()) ~= allowanceMonth then
         giveCash(2000)
-        setglobalvar("MONTHDIFFERENCE", tostring(getCurrentMonth()))
+        setglobalvar("ALLOWANCEMONTH", tostring(getCurrentMonth()))
     end
 
     if checkForHerbivoreCarcasses() then
         return -1
     end
 
-    if countSavannahAnimalsInSameHabitat() < HERBIVORE_QUOTA then
-        return -1
-    end
-
-    if (argument.stayopentimer + MONTH_QUOTA <= getCurrentMonth() and argument.stayopentimerday <= getCurrentTimeOfDay()) then
-        return 1
+    if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then
+        if (tonumber(startingMonth) + MONTH_QUOTA <= getCurrentMonth()) then
+            return 1
+        end
+    else
+        setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
+        displayZooMessage("TheWorld:HugeBiomeMonthReset", -1, 30)
     end
 
     setSavannahAnimalsLists()
@@ -111,7 +119,6 @@ setSavannahAnimalsLists = function()
             animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
             animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
             animal:BFG_SET_ATTR_BOOLEAN("b_showCrate", false)
-            animal:BFG_SET_ATTR_BOOLEAN("b_showPickup", false)
 
             if herbivoreIds == "" then
                 herbivoreIds = herbivoreIds .. getID(animal)
