@@ -70,6 +70,10 @@ castor serve
 -   [_LoliJuicy_](https://github.com/LoliJuicy)
 -   [_Thom_](https://github.com/TheThommerd)
 
+### Translation
+
+-   [_Apodemus_](https://github.com/Zt-freak) - Dutch, English
+
 ### Special thanks
 
 -   _Blue Fang Games_ - Map design, scenario concept and the creation of _Zoo Tycoon 2_.
