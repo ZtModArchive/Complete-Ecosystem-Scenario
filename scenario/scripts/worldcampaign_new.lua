@@ -12,6 +12,22 @@ MONTH_QUOTA = 4
 
 --- @return number
 evalhabitatsetup = function()
+
+    -- guest posistion stuff
+    try(
+        function ()
+            local guest = resolveTable(findType("Guest_Adult_F")[1].value)
+            guest:BFG_SET_ATTR_STRING("s_name", "LoliJuicy")
+            local pos = guest:BFG_GET_ENTITY_POSITION()
+            print("Pos X=" .. pos.x .. " Y=" .. pos.y)
+            io.flush()
+        end
+    )
+    
+
+
+
+
     if getglobalvar("HERBIVOREIDS") == nil then
         giveCash(500000)
     end
@@ -269,6 +285,8 @@ function try(func)
     local status, exception = pcall(func)
     -- Catch
     if not status then
+        print("ERROR: " .. exception)
+        io.flush()
         -- Show exception in the message panel in-game
         local increment = 50
         for i = 0, string.len(exception), increment do
