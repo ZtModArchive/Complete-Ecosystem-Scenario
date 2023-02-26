@@ -48,11 +48,6 @@ evalhugebiome = function(argument)
         startingMonth = getglobalvar("STARTINGMONTH")
     end
 
-    if tostring(getCurrentMonth()) ~= allowanceMonth then
-        giveCash(2000)
-        setglobalvar("ALLOWANCEMONTH", tostring(getCurrentMonth()))
-    end
-
     if checkForHerbivoreCarcasses() then
         return -1
     end
@@ -64,6 +59,11 @@ evalhugebiome = function(argument)
     else
         setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
         displayZooMessage("TheWorld:HugeBiomeMonthReset", -1, 30)
+    end
+
+    if tostring(getCurrentMonth()) ~= allowanceMonth then
+        giveCash(2000)
+        setglobalvar("ALLOWANCEMONTH", tostring(getCurrentMonth()))
     end
 
     setSavannahAnimalsLists()

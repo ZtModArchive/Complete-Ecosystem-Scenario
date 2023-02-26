@@ -25,11 +25,11 @@ The mod might not work with all versions of _Zoo Tycoon 2_.
 
 | Expansion<sup>_*_</sup> | Status |
 |-----------|--------|
-| Zoo Tycoon 2 | ![Tested](https://img.shields.io/badge/20.09.00.0005--beta-untested-lightgrey)<br/>![Tested](https://img.shields.io/badge/20.10.00.0006-untested-lightgrey)
+| Zoo Tycoon 2 | ![Tested](https://img.shields.io/badge/20.09.00.0005--beta-untested-inactive)<br/>![Tested](https://img.shields.io/badge/20.10.00.0006-untested-inactive)
 | Endangered Species | |
 | African Adventure | |
-| Marine Mania | ![Tested](https://img.shields.io/badge/30.06.00.0001--beta-untested-lightgrey)<br/>![Tested](https://img.shields.io/badge/30.07.00.0003--beta-untested-lightgrey)
-| Extinct Animals  | ![Tested](https://img.shields.io/badge/32.10.00.0009-untested-lightgrey)<br/>![Tested](https://img.shields.io/badge/33.05.00.0002UO-untested-lightgrey)  |
+| Marine Mania | ![Tested](https://img.shields.io/badge/30.06.00.0001--beta-untested-inactive)<br/>![Tested](https://img.shields.io/badge/30.07.00.0003--beta-untested-inactive)
+| Extinct Animals  | ![Tested](https://img.shields.io/badge/32.10.00.0009-works-success)<br/>![Tested](https://img.shields.io/badge/33.05.00.0002UO-works-success)  |
 
 _<sup>*</sup> Except for beta releases, this includes the installation of all prior expansions._
 
@@ -46,6 +46,11 @@ This mod adds in a cut scenario under the _The Globe_ campaign series, it is the
 -   [x] Check if a savannah herbivore has been attacked and killed.
 -   [ ] Check if a guest has witnessed the attack.
 -   [x] Check if a 4 months have passed with enough savannah animals sharing the same habitat
+
+### Language support
+
+-   Dutch
+-   English
 
 ## Building
 
