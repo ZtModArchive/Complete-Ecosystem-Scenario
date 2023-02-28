@@ -261,18 +261,18 @@ countSavannahAnimalsInSameHabitat = function()
     end
 
     for i = 1, table.getn(herbivores) do
-        local sharesHabitatWithCarnivore = false
+        local sharesHabitatWithCarnivore = 0
         local herbivore = resolveTable(herbivores[i].value)
 
         for j = 1, table.getn(carnivores) do
             local carnivore = resolveTable(carnivores[j].value)
             if inSameHabitat(herbivore, carnivore) then
-                sharesHabitatWithCarnivore = true
+                sharesHabitatWithCarnivore = sharesHabitatWithCarnivore + 1
                 break
             end
         end
 
-        if sharesHabitatWithCarnivore then
+        if sharesHabitatWithCarnivore >= CARNIVORE_QUOTA then
             herbivoresInCarnivoreHabitat = herbivoresInCarnivoreHabitat + 1
         end
     end
