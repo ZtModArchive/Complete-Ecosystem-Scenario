@@ -12,52 +12,77 @@ MONTH_QUOTA = 4
 
 --- @return number
 evalhabitatsetup = function()
+
+    -- guest posistion stuff
+    try(
+        function ()
+            local guest = resolveTable(findType("Guest_Adult_F")[1].value)
+            guest:BFG_SET_ATTR_STRING("s_name", "LoliJuicy")
+            local pos = guest:BFG_GET_ENTITY_POSITION()
+            print("Pos X=" .. pos.x .. " Y=" .. pos.y)
+            io.flush()
+        end
+    )
+    
+
+
+
+
     if getglobalvar("HERBIVOREIDS") == nil then
         giveCash(500000)
     end
+
+    if checkForHerbivoreCarcasses() then
+        return -1
+    end
     
     if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
+        
+
         local herbivores = split(getglobalvar("HERBIVOREIDS"), ",")
         local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
 
         if table.getn(herbivores) >= HERBIVORE_QUOTA and table.getn(carnivores) >= CARNIVORE_QUOTA then
-            -- setRuleState("HugeBiomeoverall", "neutral")
-            -- showRule("HugeBiomeoverall")
-            -- completeshowoverview()
+            setRuleState("HugeBiomeoverall", "neutral")
+            showRule("HugeBiomeoverall")
+            completeshowoverview()
             return 1
         end
     end
 
-    setSavannahAnimalsLists(false)
+    setSavannahAnimalsLists()
     return 0
 end
 
 --- @return number
 evalhugebiome = function(argument)
-    local monthDiff = getglobalvar("MONTHDIFFERENCE")
-    if monthDiff ~= tostring(getCurrentMonth()) then
-        giveCash(2000)
-        setglobalvar("MONTHDIFFERENCE", tostring(getCurrentMonth()))
-    end
-        
-    if argument.stayopentimer == nil then
-        argument.stayopentimer = getCurrentMonth()
-        argument.stayopentimerday = getCurrentTimeOfDay()
+    local startingMonth = getglobalvar("STARTINGMONTH")
+    local allowanceMonth = getglobalvar("ALLOWANCEMONTH")
 
-        setSavannahAnimalsLists(true)
+    if startingMonth == nil then
+        setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
+        startingMonth = getglobalvar("STARTINGMONTH")
     end
 
-    if not checkHerbivoresAlive() then
+    if checkForHerbivoreCarcasses() then
         return -1
     end
 
-    if (argument.stayopentimer + MONTH_QUOTA <= getCurrentMonth() and argument.stayopentimerday <= getCurrentTimeOfDay()) then
-        if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then
+    if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then
+        if (tonumber(startingMonth) + MONTH_QUOTA <= getCurrentMonth()) then
             return 1
         end
-        return -1
+    else
+        setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
+        displayZooMessage("TheWorld:HugeBiomeMonthReset", -1, 30)
     end
 
+    if tostring(getCurrentMonth()) ~= allowanceMonth then
+        giveCash(2000)
+        setglobalvar("ALLOWANCEMONTH", tostring(getCurrentMonth()))
+    end
+
+    setSavannahAnimalsLists()
     return 0
 end
 
@@ -81,7 +106,7 @@ end
 --- Sets global variables CARNIVORE_IDS and HERBIVORE_IDS
 --- @param disableRelease bool
 --- @return void
-setSavannahAnimalsLists = function(disableRelease)
+setSavannahAnimalsLists = function()
     local savannahAnimals = getAnimalsFromBiome("savannah")
     local carnivoreIds = ""
     local herbivoreIds = ""
@@ -90,14 +115,14 @@ setSavannahAnimalsLists = function(disableRelease)
         return
     end
 
+    local herbivoreIndex = 1
     for i = 1, table.getn(savannahAnimals) do
         local animal = resolveTable(savannahAnimals[i].value)
 
         if animal:BFG_GET_ATTR_BOOLEAN("b_Carnivore") then
-            if disableRelease then
-                animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
-                animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
-            end
+            animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
+            animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
+            animal:BFG_SET_ATTR_BOOLEAN("b_showCrate", false)
 
             if carnivoreIds == "" then
                 carnivoreIds = carnivoreIds .. getID(animal)
@@ -107,21 +132,75 @@ setSavannahAnimalsLists = function(disableRelease)
         end
 
         if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") then
-            if disableRelease then
-                animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
-                animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
-            end
+            animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
+            animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
+            animal:BFG_SET_ATTR_BOOLEAN("b_showCrate", false)
 
             if herbivoreIds == "" then
                 herbivoreIds = herbivoreIds .. getID(animal)
             else
                 herbivoreIds = herbivoreIds .. "," .. getID(animal)
             end
+
+            setglobalvar("HERBIVORE"..herbivoreIndex, animal:BFG_GET_ATTR_STRING("s_name"))
+            setglobalvar("HERBIVOREID"..herbivoreIndex, ""..getID(animal))
+            herbivoreIndex = herbivoreIndex + 1
         end
     end
 
     setglobalvar("CARNIVOREIDS", carnivoreIds)
     setglobalvar("HERBIVOREIDS", herbivoreIds)
+end
+
+--- Checks if all there is a carcass belonging to a savannah herbivore present
+--- @return bool
+checkForHerbivoreCarcasses = function()
+    local endOfHerbivoreNames = false
+    local carcasses = findType("Carcass_Meat")
+
+    if carcasses == nil then
+        return false
+    end
+
+    local savannahAnimals = getAnimalsFromBiome("savannah")
+    local herbivoreIds = {}
+    for i = 1, table.getn(savannahAnimals) do
+        local animal = resolveTable(savannahAnimals[i].value)
+        if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") then
+            table.insert(herbivoreIds, getID(animal))
+        end
+    end
+
+    local herbivoreIndex = 1
+    while(endOfHerbivoreNames == false) do
+
+        if getglobalvar("HERBIVORE"..herbivoreIndex) == nil or getglobalvar("HERBIVORE"..herbivoreIndex) == "" then
+            endOfHerbivoreNames = true
+            return false
+        end
+        
+        for i = 1, table.getn(carcasses) do
+            local carcass = resolveTable(carcasses[i].value)
+
+            if string.find(carcass:BFG_GET_ATTR_STRING("s_name"), getglobalvar("HERBIVORE"..herbivoreIndex)) then
+                local herbivoreWasFound = false
+                for j = 1, table.getn(herbivoreIds) do
+                    if herbivoreIds[j] == tonumber(getglobalvar("HERBIVOREID"..herbivoreIndex)) then
+                        herbivoreWasFound = true
+                    end
+                end
+
+                if not herbivoreWasFound then
+                    return true
+                end
+            end
+        end
+
+        setglobalvar("HERBIVORE"..herbivoreIndex, "")
+        setglobalvar("HERBIVOREID"..herbivoreIndex, "")
+
+        herbivoreIndex = herbivoreIndex + 1
+    end
 end
 
 --- Checks if all savannah herbivores from the global HERBIVORE_IDS are still present
@@ -182,18 +261,17 @@ countSavannahAnimalsInSameHabitat = function()
     end
 
     for i = 1, table.getn(herbivores) do
-        local sharesHabitatWithCarnivore = false
+        local sharesHabitatWithCarnivore = 0
         local herbivore = resolveTable(herbivores[i].value)
 
         for j = 1, table.getn(carnivores) do
             local carnivore = resolveTable(carnivores[j].value)
             if inSameHabitat(herbivore, carnivore) then
-                sharesHabitatWithCarnivore = true
-                break
+                sharesHabitatWithCarnivore = sharesHabitatWithCarnivore + 1
             end
         end
 
-        if sharesHabitatWithCarnivore then
+        if sharesHabitatWithCarnivore >= CARNIVORE_QUOTA then
             herbivoresInCarnivoreHabitat = herbivoresInCarnivoreHabitat + 1
         end
     end
@@ -206,6 +284,8 @@ function try(func)
     local status, exception = pcall(func)
     -- Catch
     if not status then
+        print("ERROR: " .. exception)
+        io.flush()
         -- Show exception in the message panel in-game
         local increment = 50
         for i = 0, string.len(exception), increment do
