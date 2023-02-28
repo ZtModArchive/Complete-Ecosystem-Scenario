@@ -268,7 +268,6 @@ countSavannahAnimalsInSameHabitat = function()
             local carnivore = resolveTable(carnivores[j].value)
             if inSameHabitat(herbivore, carnivore) then
                 sharesHabitatWithCarnivore = sharesHabitatWithCarnivore + 1
-                break
             end
         end
 
