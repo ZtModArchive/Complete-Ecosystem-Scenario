@@ -1,10 +1,10 @@
-include "scenario/scripts/awards.lua"
-include "scenario/scripts/economy.lua"
-include "scenario/scripts/entity.lua"
-include "scenario/scripts/misc.lua"
-include "scenario/scripts/needs.lua"
-include "scenario/scripts/token.lua"
-include "scenario/scripts/ui.lua"
+include("scenario/scripts/awards.lua")
+include("scenario/scripts/economy.lua")
+include("scenario/scripts/entity.lua")
+include("scenario/scripts/misc.lua")
+include("scenario/scripts/needs.lua")
+include("scenario/scripts/token.lua")
+include("scenario/scripts/ui.lua")
 
 HERBIVORE_QUOTA = 6
 CARNIVORE_QUOTA = 4
@@ -14,23 +14,23 @@ MONTH_QUOTA = 4
 evalhabitatsetup = function()
 
     -- guest posistion stuff
-    try(
-        function ()
-            local guest = resolveTable(findType("Guest_Adult_F")[1].value)
-            guest:BFG_SET_ATTR_STRING("s_name", "LoliJuicy")
-            local pos = guest:BFG_GET_ENTITY_POSITION()
-            print("Pos X=" .. pos.x .. " Y=" .. pos.y)
-            io.flush()
-        end
-    )
+--    try(
+--        function ()
+--            local guest = resolveTable(findType("Guest_Adult_F")[1].value)
+--            guest:BFG_SET_ATTR_STRING("s_name", "LoliJuicy")
+--            local pos = guest:BFG_GET_ENTITY_POSITION()
+--            print("Pos X=" .. pos.x .. " Y=" .. pos.y)
+--            io.flush()
+--        end
+--    )
     
 
 
 
 
-    if getglobalvar("HERBIVOREIDS") == nil then
-        giveCash(500000)
-    end
+--    if getglobalvar("HERBIVOREIDS") == nil then
+--        giveCash(500000)
+--    end
 
     if checkForHerbivoreCarcasses() then
         return -1
@@ -56,32 +56,51 @@ end
 
 --- @return number
 evalhugebiome = function(argument)
-    local startingMonth = getglobalvar("STARTINGMONTH")
-    local allowanceMonth = getglobalvar("ALLOWANCEMONTH")
+	
+	local startingMonth = getglobalvar("STARTINGMONTH")
+	local allowanceMonth = getglobalvar("ALLOWANCEMONTH")
+	local failsafe = 0
 
-    if startingMonth == nil then
-        setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
-        startingMonth = getglobalvar("STARTINGMONTH")
+    if getglobalvar("HERBIVOREIDS") == nil then
+        giveCash(500000)
     end
+
+	if failsafe == 0 then	
+		if startingMonth == nil then
+			setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
+			startingMonth = getglobalvar("STARTINGMONTH")
+		end
+
+		if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
+        
+
+			local herbivores = split(getglobalvar("HERBIVOREIDS"), ",")
+			local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
+		
+			if table.getn(herbivores) >= HERBIVORE_QUOTA and table.getn(carnivores) >= CARNIVORE_QUOTA then
+				displayZooMessage("TheWorld:HugeBiomeHabitatSetupOK", 1, 30)
+				failsafe = 1
+			end
+		end
+	else
+		if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then
+		    if tostring(getCurrentMonth()) ~= allowanceMonth then
+				giveCash(2000)
+				setglobalvar("ALLOWANCEMONTH", tostring(getCurrentMonth()))			
+			elseif (tonumber(startingMonth) + MONTH_QUOTA <= getCurrentMonth()) then
+				return 1
+			end
+		else
+			setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
+			displayZooMessage("TheWorld:HugeBiomeMonthReset", -1, 30)
+			failsafe = 0
+		end
+	end
 
     if checkForHerbivoreCarcasses() then
         return -1
     end
-
-    if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then
-        if (tonumber(startingMonth) + MONTH_QUOTA <= getCurrentMonth()) then
-            return 1
-        end
-    else
-        setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
-        displayZooMessage("TheWorld:HugeBiomeMonthReset", -1, 30)
-    end
-
-    if tostring(getCurrentMonth()) ~= allowanceMonth then
-        giveCash(2000)
-        setglobalvar("ALLOWANCEMONTH", tostring(getCurrentMonth()))
-    end
-
+	
     setSavannahAnimalsLists()
     return 0
 end
