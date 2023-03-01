@@ -83,6 +83,7 @@ castor serve
 ### Translation
 
 -   [_Apodemus_](https://github.com/Zt-freak) - Dutch, English
+-   [_LoliJuicy_](https://github.com/LoliJuicy) - English
 
 ### Special thanks
 
