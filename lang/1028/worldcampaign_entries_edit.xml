@@ -1,0 +1,8 @@
+<ZT2Strings>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">在一大草原地區中，至少需要四種食肉動物和六種食草動物。</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">糟糕！您的食肉動物和食草動物的數量不符合要求的目標！</LOC_STRING>		
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">圓滿成功！您達到了食肉動物和食草動物的要求目標！</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">以零食草動物死亡数，管理一大草原地區四個月</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">糟糕！您的食肉動物殺死了一個食草動物！</LOC_STRING>	
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">圓滿成功！以零食草動物死亡数，您已經管理一大草原地區四個月了！</LOC_STRING>	
+</ZT2Strings
