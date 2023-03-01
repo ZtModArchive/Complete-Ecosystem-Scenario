@@ -16,10 +16,10 @@
 				<BFScenarioScriptAction script="scenario/scripts/worldcampaign_new.lua" entry="completeworldcampaignscen4" />
 			</success>
 			<children>
-				<BFScenarioRule name="HugeBiomesetup" hidden="1" state="0" sticky="true">
+				<BFScenarioRule name="HugeBiomesetup" hidden="0" state="0" sticky="true">
 					<info type="primary" locid="TheWorld:HugeBiomeoverallgoal">
-						<neutral locid="TheWorld:HugeBiomeoverallgoal" />
-						<success locid="TheWorld:HugeBiomeoverallgoalOK" />
+						<neutral locid="TheWorld:HugeBiomeHabitatSetup" />
+						<success locid="TheWorld:HugeBiomeHabitatSetupOK" />
 						<failure locid="TheWorld:HugeBiomeoverallgoalfailed" overview="HugeBiomeFailureoverview" />
 					</info>
 					<evaluate>
@@ -32,7 +32,7 @@
 						<BFScenarioScriptAction script="scenario/scripts/worldcampaign_new.lua" entry="failworldcampaignscen4" />
 					</failure>
 				</BFScenarioRule>			
-				<BFScenarioRule name="HugeBiomeoverall" hidden="0" state="0" sticky="true">
+				<BFScenarioRule name="HugeBiomeoverall" hidden="1" state="0" sticky="true">
 					<info type="primary" locid="TheWorld:HugeBiomeoverallgoal">
 						<neutral locid="TheWorld:HugeBiomeoverallgoal" />
 						<success locid="TheWorld:HugeBiomeoverallgoalOK" />
