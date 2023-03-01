@@ -88,7 +88,7 @@ evalhugebiome = function(l_2_arg0)
 
 		if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then
 			if (tonumber(startingMonth) + MONTH_QUOTA <= getCurrentMonth()) then
-				setRuleState("HugeBiomequota", "success")
+				setRuleState("HugeBiomecounter", "success")
 				l_2_arg0.counterDone = 1
 				return 1
 			end
@@ -108,6 +108,9 @@ evalhugebiome = function(l_2_arg0)
 	
     setSavannahAnimalsLists()
     return 0
+end
+
+completehugebiome = function()
 end
 
 completeworldcampaignscen4 = function()
