@@ -53,6 +53,7 @@ evalhugebiome = function(l_2_arg0)
         giveCash(500000)
     end
 
+--- If anyone can come up with a better statement, edit it thanks!
 	if l_2_arg0.quotaDone == nil then
 	    if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
 	
@@ -60,10 +61,12 @@ evalhugebiome = function(l_2_arg0)
 			local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
 
 			if table.getn(herbivores) >= HERBIVORE_QUOTA and table.getn(carnivores) >= CARNIVORE_QUOTA then
-				genericokpanel(nil, "TheWorld:HugeBiomeoverallquotadone")
-				setRuleState("HugeBiomequota", "success")
-				showRule("HugeBiomecounter")
-				l_2_arg0.quotaDone = 1	
+				if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then				
+					genericokpanel(nil, "TheWorld:HugeBiomeoverallquotadone")
+					setRuleState("HugeBiomequota", "success")
+					showRule("HugeBiomecounter")
+					l_2_arg0.quotaDone = 1
+				end		
 			end
 		end	
 	end
@@ -94,8 +97,7 @@ evalhugebiome = function(l_2_arg0)
 			setRuleState("HugeBiomequota", "neutral")
 			hideRule("HugeBiomecounter")
 			genericokpanel(nil, "TheWorld:HugeBiomeoverallcounterfailed")
-			l_2_arg0.quotaDone = nil
-			l_2_arg0.counterDone = nil
+			l_2_arg0.quotaDone = nil		
 		end
 
 		if tostring(getCurrentMonth()) ~= allowanceMonth then
@@ -103,10 +105,6 @@ evalhugebiome = function(l_2_arg0)
 			setglobalvar("ALLOWANCEMONTH", tostring(getCurrentMonth()))
 		end
 	end
-	
-    print("QuotaState" .. l_2_arg0.quotaDone)
-	print("CounterState" .. l_2_arg0.counterDone)
-    io.flush()	
 	
     setSavannahAnimalsLists()
     return 0
@@ -183,42 +181,35 @@ countSavannahAnimalsInSameHabitat = function()
     local herbivoresInCarnivoreHabitat = 0
     local carnivores = {}
     local herbivores = {}
-	
     for i = 1, table.getn(savannahAnimals) do
         local animal = resolveTable(savannahAnimals[i].value)
-
         if animal:BFG_GET_ATTR_BOOLEAN("b_Carnivore") then
             table.insert(carnivores, savannahAnimals[i])
         end
-
-        if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Graminivore") then
+        if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") then
             table.insert(herbivores, savannahAnimals[i])
         end
     end
 
     for i = 1, table.getn(herbivores) do
-        local sharesHabitatWithCarnivore = false
+        local sharesHabitatWithCarnivore = 0
         local herbivore = resolveTable(herbivores[i].value)
 
         for j = 1, table.getn(carnivores) do
             local carnivore = resolveTable(carnivores[j].value)
             if inSameHabitat(herbivore, carnivore) then
-                sharesHabitatWithCarnivore = true
-                break
+                sharesHabitatWithCarnivore = sharesHabitatWithCarnivore + 1
             end
         end
 
-        if sharesHabitatWithCarnivore == true then
+        if sharesHabitatWithCarnivore >= CARNIVORE_QUOTA then
             herbivoresInCarnivoreHabitat = herbivoresInCarnivoreHabitat + 1
         end
     end
-
-    print("HerbinCarnHab=" .. herbivoresInCarnivoreHabitat)
-    io.flush()
-
+	
     return herbivoresInCarnivoreHabitat
 end
-
+	
 --- Checks if all there is a carcass belonging to a savannah herbivore present
 --- @return bool
 checkForHerbivoreCarcasses = function()
