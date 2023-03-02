@@ -49,6 +49,7 @@ This mod adds in a cut scenario under the _The Globe_ campaign series, it is the
 
 ### Language support
 
+- Chinese (Traditional)
 - Dutch
 - English
 
@@ -83,7 +84,7 @@ castor serve
 ### Translation
 
 - [_Apodemus_](https://github.com/Zt-freak) - Dutch, English
-- [_LoliJuicy_](https://github.com/LoliJuicy) - English
+- [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese, English
 
 ### Special thanks
 
