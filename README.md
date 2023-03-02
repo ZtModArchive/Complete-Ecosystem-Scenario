@@ -29,7 +29,7 @@ The mod might not work with all versions of _Zoo Tycoon 2_.
 | Endangered Species | |
 | African Adventure | |
 | Marine Mania | ![Tested](https://img.shields.io/badge/30.06.00.0001--beta-untested-inactive)<br/>![Tested](https://img.shields.io/badge/30.07.00.0003--beta-untested-inactive)
-| Extinct Animals  | ![Tested](https://img.shields.io/badge/32.10.00.0009-testing-important)<br/>![Tested](https://img.shields.io/badge/33.05.00.0002UO-testing-important)  |
+| Extinct Animals  | ![Tested](https://img.shields.io/badge/32.10.00.0009-tested-done)<br/>![Tested](https://img.shields.io/badge/33.05.00.0002UO-tested-done)  |
 
 _<sup>*</sup> Except for beta releases, this includes the installation of all prior expansions._
 
