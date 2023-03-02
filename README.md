@@ -52,6 +52,7 @@ This mod adds in a cut scenario under the _The Globe_ campaign series, it is the
 -   Chinese (Traditional)
 -   Dutch
 -   English
+-   Japanese
 
 ## Building
 
@@ -84,7 +85,7 @@ castor serve
 ### Translation
 
 -   [_Apodemus_](https://github.com/Zt-freak) - Dutch, English
--   [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese, English
+-   [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese (rough translation), English, Japanese (rough translation)
 
 ### Special thanks
 
