@@ -1,0 +1,8 @@
+<ZT2Strings>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">サバンナ展用に少なくとも 4 種類の肉食動物と 6 種類の草食動物を買い付けてください。</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">残念です！あなたが肉食動物と草食動物の数目標の達成ことができませんでした。</LOC_STRING>		
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">すばらしい！サバンナ肉食動物と草食動物の数目標の達成ことが成功しました！</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">サバンナ展を 4 か月間続け、草食動物が危害を受けることがないようにしてください。</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">残念です！あなたの肉食動物は草食動物を殺しました。</LOC_STRING>	
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">すばらしい！サバンナ展を 4 か月間続行し、草食動物が危害を受けるがないことをできました！</LOC_STRING>	
+</ZT2Strings>
