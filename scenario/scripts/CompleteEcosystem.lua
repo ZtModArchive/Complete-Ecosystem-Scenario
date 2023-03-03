@@ -9,24 +9,24 @@ HERBIVORE_QUOTA = 6
 CARNIVORE_QUOTA = 4
 MONTH_QUOTA = 4
 
-evalhabitatsetup = function()
+evaldebugging = function()
 
 ----- Debug Entity Pos
---    try(
---        function ()
---            local guest = resolveTable(findType("Guest_Adult_F")[1].value)
---            guest:BFG_SET_ATTR_STRING("s_name", "LoliJuicy")
---            local pos = guest:BFG_GET_ENTITY_POSITION()
---            print("Pos X=" .. pos.x .. " Y=" .. pos.y)
- --           io.flush()
---        end
---    )
+    try(
+        function ()
+            local guest = resolveTable(findType("Guest_Adult_F")[1].value)
+            guest:BFG_SET_ATTR_STRING("s_name", "LoliJuicy")
+            local pos = guest:BFG_GET_ENTITY_POSITION()
+            print("Pos X=" .. pos.x .. " Y=" .. pos.y)
+            io.flush()
+        end
+    )
     
 ----- Debug giveCash
---    if getglobalvar("HERBIVOREIDS") == nil then
---        giveCash(500000)
---    end
-
+    if getglobalvar("HERBIVOREIDS") == nil then
+        giveCash(500000)
+    end
+	
 ----- Setting up IDs... 
     if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
         
@@ -41,19 +41,20 @@ evalhabitatsetup = function()
             return 1
         end
     end
+
+	if checkForHerbivoreCarcasses() then
+		setRuleState("HugeBiomequota", "failure")	
+		return -1
+	end
 	
     setSavannahAnimalsLists()
     return 0	
 end
 
+--- Main evaluation
 --- @return number
 evalhugebiome = function(l_2_arg0)
-
-    if getglobalvar("HERBIVOREIDS") == nil then
-        giveCash(500000)
-    end
-
---- If anyone can come up with a better statement, edit it thanks!
+	
 	if l_2_arg0.quotaDone == nil then
 	    if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
 	
@@ -81,11 +82,6 @@ evalhugebiome = function(l_2_arg0)
 			startingMonth = getglobalvar("STARTINGMONTH")
 		end
 
-		if checkForHerbivoreCarcasses() then
-			setRuleState("HugeBiomequota", "failure")	
-			return -1
-		end
-
 		if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then
 			if (tonumber(startingMonth) + MONTH_QUOTA <= getCurrentMonth()) then
 				setRuleState("HugeBiomecounter", "success")
@@ -96,7 +92,7 @@ evalhugebiome = function(l_2_arg0)
 			setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
 			setRuleState("HugeBiomequota", "neutral")
 			hideRule("HugeBiomecounter")
-			genericokpanel(nil, "TheWorld:HugeBiomeoverallcounterfailed")
+			genericokpanel(nil, "TheWorld:HugeBiomeoverallquotafailed")
 			l_2_arg0.quotaDone = nil		
 		end
 
@@ -105,7 +101,13 @@ evalhugebiome = function(l_2_arg0)
 			setglobalvar("ALLOWANCEMONTH", tostring(getCurrentMonth()))
 		end
 	end
-	
+
+	if checkForHerbivoreCarcasses() then
+		setRuleState("HugeBiomequota", "failure")
+		setRuleState("HugeBiomecounter", "failure")		
+		return -1
+	end
+		
     setSavannahAnimalsLists()
     return 0
 end
@@ -116,6 +118,10 @@ end
 completeworldcampaignscen4 = function()
    BFLOG(SYSTRACE, "completeworldcampaignscen4")
    setuservar("worldcampaignscenario4", "completed")
+   setuservar("globelock", "true")
+   local l_6_0 = getlocidfromspecies("Statue_Globe_df")
+   local l_6_1 = getLocID("itemunlock:newitemgeneral") .. l_6_0
+   genericokpaneltext(nil, l_6_1)  
    showscenariowin("TheWorld:HugeBiomeSuccessoverview", nil)  
 end
 
