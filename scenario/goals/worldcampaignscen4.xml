@@ -26,7 +26,7 @@
 						<BFScenarioScriptAction script="scenario/scripts/CompleteEcosystem.lua" entry="evalhugebiome" />
 					</evaluate>
 					<success>
-						<BFScenarioScriptAction script="scenario/scripts/ui.lua" entry="completehugebiome" />
+						<BFScenarioScriptAction script="scenario/scripts/CompleteEcosystem.lua" entry="completehugebiome" />
 					</success>
 					<failure>
 						<BFScenarioScriptAction script="scenario/scripts/CompleteEcosystem.lua" entry="failworldcampaignscen4" />
