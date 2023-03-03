@@ -1,11 +1,11 @@
 {
-  "ArchiveName": "zzzzz-CompleteEcosystem",
+  "ArchiveName": "zzz-LJApo_CompleteEcosystem_Beta",
   "RepoName": "ZtModArchive/CompleteEcosystem",
   "Author": "Blue Fang",
   "Version": "v0.0.1",
   "Type": "mod",
   "License": null,
-  "Description": "Remake of the scrapped Complete Ecosystem scenario",
+  "Description": "Recreation of the scrapped Complete Ecosystem scenario",
   "Z2f": true,
   "ZT2loc": "C:\\Program Files (x86)\\Microsoft Games\\Zoo Tycoon 2",
   "IncludeFolders": [

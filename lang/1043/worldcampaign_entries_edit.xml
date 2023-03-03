@@ -1,0 +1,8 @@
+<ZT2Strings>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">Heb minstens vier carnivoren en zes herbivoren in een savanneverblijf</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">Oh nee! Je voldoet niet aan het vereiste aantal carnivoren en herbivoren!</LOC_STRING>		
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">Goed gedaan! Je voldoet aan de initiële eisen voor de savanneherbivoren en carnivoren!</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">Houd het savanneverblijf voor vier maanden zonder dat de herbivoren gewond raken</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">Oh nee! Een van de carnivoren heeft een herbivoor gedood.</LOC_STRING>	
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">Goed gedaan! Je hebt het savanneverblijf gehouden zonder verwonde herbivoren!</LOC_STRING>	
+</ZT2Strings>

@@ -9,7 +9,7 @@
 >
 > \- Unknown Zoo Tycoon 2 developer
 
-This is an attempt at remaking a scrapped scenario from _Zoo Tycoon 2_, which involved putting both savannah herbivores and carnivores together in the same habitat.
+This is an attempt at restoring a scrapped scenario from _Zoo Tycoon 2_, which involved putting both savannah herbivores and carnivores together in the same habitat.
 
 ## License
 
@@ -25,11 +25,11 @@ The mod might not work with all versions of _Zoo Tycoon 2_.
 
 | Expansion<sup>_*_</sup> | Status |
 |-----------|--------|
-| Zoo Tycoon 2 | ![Tested](https://img.shields.io/badge/20.09.00.0005--beta-untested-lightgrey)<br/>![Tested](https://img.shields.io/badge/20.10.00.0006-untested-lightgrey)
+| Zoo Tycoon 2 | ![Tested](https://img.shields.io/badge/20.09.00.0005--beta-untested-inactive)<br/>![Tested](https://img.shields.io/badge/20.10.00.0006-untested-inactive)
 | Endangered Species | |
 | African Adventure | |
-| Marine Mania | ![Tested](https://img.shields.io/badge/30.06.00.0001--beta-untested-lightgrey)<br/>![Tested](https://img.shields.io/badge/30.07.00.0003--beta-untested-lightgrey)
-| Extinct Animals  | ![Tested](https://img.shields.io/badge/32.10.00.0009-untested-lightgrey)<br/>![Tested](https://img.shields.io/badge/33.05.00.0002UO-untested-lightgrey)  |
+| Marine Mania | ![Tested](https://img.shields.io/badge/30.06.00.0001--beta-untested-inactive)<br/>![Tested](https://img.shields.io/badge/30.07.00.0003--beta-untested-inactive)
+| Extinct Animals  | ![Tested](https://img.shields.io/badge/32.10.00.0009-tested-success)<br/>![Tested](https://img.shields.io/badge/33.05.00.0002UO-tested-success)  |
 
 _<sup>*</sup> Except for beta releases, this includes the installation of all prior expansions._
 
@@ -38,17 +38,29 @@ _<sup>*</sup> Except for beta releases, this includes the installation of all pr
 In order to properly display the scenario preview image, put `worldcampscen4.jpg` in the following sub-directory in the root directory of your _Zoo Tycoon 2_ installation: `maps/scenario`.
 Alternatively you may add it to your `.z2f` but don't compress the jpg file. Castor versions before 4.2.1 do not support no-compression addition to `.z2f` archives.
 
-## Usage
+## Features
 
-This mod adds in a cut scenario under the _The Globe_ campaign series, it is the last one in this campaign. Completion of the prior scenarios of this campaign is required.
+This mod adds in a cut scenario under the _The Globe_ campaign series, it is the last one in this campaign (fourth in beta 1).
+
+-   [x] Check if 6 savannah herbivores and 4 savannah carnivores are in the same habitat.
+-   [x] Check if a savannah herbivore has been attacked and killed.
+-   [ ] Check if a guest has witnessed the attack.
+-   [x] Check if a 4 months have passed with enough savannah animals sharing the same habitat
+
+### Language support
+
+-   Chinese (Traditional)
+-   Dutch
+-   English
+-   Japanese
 
 ## Building
 
 A vast majority of _Zoo Tycoon 2_ mods are either `.z2f` or `.zip` archives, this mod is no different. You can use Microsoft Windows' own file zipper to create zips.
 
-**CAUTION:** other zipping programs such as 7-Zip or WinRAR can compress to a `.zip` that _Zoo Tycoon 2_ does not support.
+**CAUTION:** Other zipping programs such as 7-Zip or WinRAR manually compress the `.zip` archives that _Zoo Tycoon 2_ does not support. In most cases, they can be read except a few file formats. You'll need to do extra steps if you want to exclude some files from being fully compressed.
 
-Alternatively, you can use [Castor](https://github.com/ZtModArchive/Castor) to build mods. simply use the command
+Alternatively, you can use [Castor](https://github.com/ZtModArchive/Castor) to build mods. Simply use the command
 
 ```bash
 castor build
@@ -69,6 +81,11 @@ castor serve
 -   [_Apodemus_](https://github.com/Zt-freak)
 -   [_LoliJuicy_](https://github.com/LoliJuicy)
 -   [_Thom_](https://github.com/TheThommerd)
+
+### Translation
+
+-   [_Apodemus_](https://github.com/Zt-freak) - Dutch, English
+-   [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese (rough translation), English, Japanese (rough translation)
 
 ### Special thanks
 
