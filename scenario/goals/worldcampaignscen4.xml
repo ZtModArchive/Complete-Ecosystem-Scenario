@@ -26,7 +26,7 @@
 						<BFScenarioScriptAction script="scenario/scripts/CompleteEcosystem.lua" entry="evalhugebiome" />
 					</evaluate>
 					<success>
-						<BFScenarioScriptAction script="scenario/scripts/ui.lua" entry="showprimarygoals" />
+						<BFScenarioScriptAction script="scenario/scripts/ui.lua" entry="completehugebiome" />
 					</success>
 					<failure>
 						<BFScenarioScriptAction script="scenario/scripts/CompleteEcosystem.lua" entry="failworldcampaignscen4" />
@@ -36,6 +36,7 @@
 					<info type="primary" >
 						<neutral locid="TheWorld:HugeBiomeoverallquota" />
 						<success locid="TheWorld:HugeBiomeoverallquotadone"/>
+						<failure locid="TheWorld:HugeBiomeoverallquotafailed"/>	
 					</info>
 				</BFScenarioRule>
 				<BFScenarioRule name="HugeBiomecounter" hidden="1" state="0" sticky="true">

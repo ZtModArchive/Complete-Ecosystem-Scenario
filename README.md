@@ -9,7 +9,7 @@
 >
 > \- Unknown Zoo Tycoon 2 developer
 
-This is an attempt at remaking a scrapped scenario from _Zoo Tycoon 2_, which involved putting both savannah herbivores and carnivores together in the same habitat.
+This is an attempt at restoring a scrapped scenario from _Zoo Tycoon 2_, which involved putting both savannah herbivores and carnivores together in the same habitat.
 
 ## License
 
@@ -29,7 +29,7 @@ The mod might not work with all versions of _Zoo Tycoon 2_.
 | Endangered Species | |
 | African Adventure | |
 | Marine Mania | ![Tested](https://img.shields.io/badge/30.06.00.0001--beta-untested-inactive)<br/>![Tested](https://img.shields.io/badge/30.07.00.0003--beta-untested-inactive)
-| Extinct Animals  | ![Tested](https://img.shields.io/badge/32.10.00.0009-testing-important)<br/>![Tested](https://img.shields.io/badge/33.05.00.0002UO-testing-important)  |
+| Extinct Animals  | ![Tested](https://img.shields.io/badge/32.10.00.0009-tested-success)<br/>![Tested](https://img.shields.io/badge/33.05.00.0002UO-tested-success)  |
 
 _<sup>*</sup> Except for beta releases, this includes the installation of all prior expansions._
 
@@ -40,7 +40,7 @@ Alternatively you may add it to your `.z2f` but don't compress the jpg file. Cas
 
 ## Features
 
-This mod adds in a cut scenario under the _The Globe_ campaign series, it is the last one in this campaign.
+This mod adds in a cut scenario under the _The Globe_ campaign series, it is the last one in this campaign (fourth in beta 1).
 
 -   [x] Check if 6 savannah herbivores and 4 savannah carnivores are in the same habitat.
 -   [x] Check if a savannah herbivore has been attacked and killed.
@@ -58,9 +58,9 @@ This mod adds in a cut scenario under the _The Globe_ campaign series, it is the
 
 A vast majority of _Zoo Tycoon 2_ mods are either `.z2f` or `.zip` archives, this mod is no different. You can use Microsoft Windows' own file zipper to create zips.
 
-**CAUTION:** other zipping programs such as 7-Zip or WinRAR can compress to a `.zip` that _Zoo Tycoon 2_ does not support.
+**CAUTION:** Other zipping programs such as 7-Zip or WinRAR manually compress the `.zip` archives that _Zoo Tycoon 2_ does not support. In most cases, they can be read except a few file formats. You'll need to do extra steps if you want to exclude some files from being fully compressed.
 
-Alternatively, you can use [Castor](https://github.com/ZtModArchive/Castor) to build mods. simply use the command
+Alternatively, you can use [Castor](https://github.com/ZtModArchive/Castor) to build mods. Simply use the command
 
 ```bash
 castor build
