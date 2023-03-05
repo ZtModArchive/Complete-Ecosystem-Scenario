@@ -1,8 +1,11 @@
 <ZT2Strings>
+    <LOC_STRING _locID="TheWorld:AsianAnimalsSuccessoverview" version="3">因為這些稀有亞洲動物的加入，動物園生意興隆，遊客數大幅增加，而董事會也非常滿意您的工作成果。     </LOC_STRING>
+	<LOC_STRING _locID="TheWorld:HugeBiomeoverviewshort" version="3">建立一個包含草食性動物及肉食性動物的莽原展示區，但請餵飽肉食性動物，以避免任何不幸的事情發生!如果完成這個劇情遊戲中的所有任務，即可解除對於地球雕像對象的封鎖!       </LOC_STRING>
+	<LOC_STRING _locID="TheWorld:HugeBiomeSuccessoverview" version="3">您的生態系統在試辦的四個月期間非常成功! 雖然動物管理員在餵飽肉食性動物的工作上有些疲於奔命，但遊客非常喜歡這個展示區!為了表揚您的成就，董事會頒贈地球雕像給您。從現在開始，您就可以在動物園中設置地球雕像。      </LOC_STRING>
     <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">在一大草原地區中，至少需要四種食肉動物和六種食草動物。</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">糟糕！您的食肉動物和食草動物的數量不符合要求的目標！</LOC_STRING>		
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">圓滿成功！您達到了食肉動物和食草動物的要求目標！</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">糟糕!您的食肉動物和食草動物的數量不符合要求的目標!</LOC_STRING>		
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">好極了!您達到了食肉動物和食草動物的要求目標!</LOC_STRING>
     <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">以零食草動物死亡数，管理一大草原地區四個月</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">糟糕！您的食肉動物殺死了一個食草動物！</LOC_STRING>	
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">圓滿成功！以零食草動物死亡数，您已經管理一大草原地區四個月了！</LOC_STRING>	
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">糟糕!您的食肉動物殺死了一個食草動物!</LOC_STRING>	
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">好極了!以零食草動物死亡数，您已經管理一大草原地區四個月了!</LOC_STRING>	
 </ZT2Strings>
