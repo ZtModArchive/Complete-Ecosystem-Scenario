@@ -13,3 +13,9 @@ The LOCALE IDS are as follows:
 1053 - Swedish
 2070 - Portuguese (Portugal)
 3082 - Spanish (Spain)
+
+Only exists in base game: 1028, 1040, 1041
+
+Expansions: 1031, 1033, 1036, 1042 (up to MM), 1043, 1053, 3082
+
+Unsure: 1045, 1046, 2070
