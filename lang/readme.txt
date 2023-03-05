@@ -8,6 +8,7 @@ The LOCALE IDS are as follows:
 1041 - Japanese
 1042 - Korean
 1043 - Dutch
+1045 - Polish
 1046 - Portuguese (Brazil)
 1053 - Swedish
 2070 - Portuguese (Portugal)
