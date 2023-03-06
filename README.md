@@ -88,8 +88,8 @@ castor serve
 
 -   [_Apodemus_](https://github.com/Zt-freak) - Dutch, English
 -   [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese (rough translation), English, Japanese (rough translation)
--   [_DarthQuell_] - Spanish
--   [_DL_Baryonyx_] - French
+-   _DL_Baryonyx_ - French
+-   _DarthQuell_ - Spanish
 
 ### Special thanks
 
