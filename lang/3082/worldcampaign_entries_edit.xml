@@ -2,10 +2,10 @@
     <LOC_STRING _locID="TheWorld:AsianAnimalsSuccessoverview" version="3">La incorporación de estos animales asiáticos tan poco frecuentes ha conseguido el impacto positivo esperado en la afluencia de visitantes a su zoo. El zoo está lleno de actividad y el Consejo de dirección está muy satisfecho con los resultados.     </LOC_STRING>
 	<LOC_STRING _locID="TheWorld:HugeBiomeoverviewshort" version="3">  Cree una instalación de la sabana que contenga herbívoros y carnívoros, ¡pero mantenga los carnívoros bien alimentados para evitar desgraciados accidentes! Complete todos los escenarios de esta campaña para desbloquear la estatua del mundo.       </LOC_STRING>
 	<LOC_STRING _locID="TheWorld:HugeBiomeSuccessoverview" version="3">¡Enhorabuena! Ha conseguido crear un parque zoológico dedicado a los animales de África. El nuevo "Imperio de los animales africanos" ya se conoce como destino turístico y atrae a visitantes de todo el mundo. En reconocimiento a su trabajo, se le ha otorgado la estatua del mundo, que podrá utilizar en todas sus iniciativas futuras.      </LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">Have at least four carnivores and six herbivores in a savannah exhibit</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">Oh no! You did not meet the requirements for the number of carnivores and herbivores!</LOC_STRING>		
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">Great work! You have met the initial requirements for the savannah carnivores and herbivores!</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">Run the savannah exhibit for four months without getting any herbivores injured</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">Oh no! One of your carnivores have killed a herbivore.</LOC_STRING>	
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">Great work! You have managed to run the savannah exhibit without any herbivores getting injured!</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">Tenga por lo menos cuatro carnívoros y seis herbívoros en una exhibición de la sabana</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">¡Ay no! No cumplió con los requisitos para el numero de carnívoros y herbívoros.</LOC_STRING>		
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">¡Buen trabajo! Pudiste cumplir los requisitos iniciales para los carnívoros y herbívoros de la sabana.</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">Asegure de que la exhibición dure cuatro meses sin que ningún herbívoro se lastime</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">¡Ay no! Un carnívoro mato a un herbívoro.</LOC_STRING>	
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">¡Buen trabajo! Pudiste manejar la exhibición de la sabana sin que ningún herbívoro se lastime.</LOC_STRING>
 </ZT2Strings>
