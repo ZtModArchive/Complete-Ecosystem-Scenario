@@ -90,11 +90,11 @@ castor serve
 ### Translation
 
 -   [_Apodemus_](https://github.com/Zt-freak) - Dutch, English
--   [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese, English, Japanese (rough translation)
--   _DL_Baryonyx_ - French
 -   _DarthQuell_ - Spanish
+-   _DL_Baryonyx_ - French
+-   _Jorge Gabriel_ - Portuguese (Brazil)
 -   _Lelka_ - Korean
--   _???_ - Portuguese (Brazil)
+-   [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese, English, Japanese (rough translation)
 -   [_HENDRIX_](https://github.com/HENDRIX-ZT2) - German
 
 ### Special thanks
