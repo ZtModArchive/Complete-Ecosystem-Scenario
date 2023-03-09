@@ -2,10 +2,10 @@
     <LOC_STRING _locID="TheWorld:AsianAnimalsSuccessoverview" version="3">L'ajout de ces espèces rares originaires d'Asie a eu l'impact escompté sur la fréquentation de votre zoo. Celui-ci prospère et le Conseil d'administration est particulièrement satisfait de vos résultats.     </LOC_STRING>
 	<LOC_STRING _locID="TheWorld:HugeBiomeoverviewshort" version="3">  Créez un enclos Savane contenant à la fois des herbivores et des carnivores. Attention : n'oubliez pas de nourrir suffisamment les carnivores pour parer à tout incident malheureux ! Terminez tous les scénarios de cette campagne pour débloquer le Globe terrestre !       </LOC_STRING>
 	<LOC_STRING _locID="TheWorld:HugeBiomeSuccessoverview" version="3">Votre écosystème a connu un véritable succès durant les quatre mois d'essai. Les visiteurs ont énormément apprécié l'enclos en dépit de la pression mise sur le personnel du zoo pour que les carnivores soient rassasiés ! En reconnaissance de vos accomplissements, vous avez reçu le Globe terrestre, que vous pourrez utiliser dans vos entreprises futures.      </LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">Have at least four carnivores and six herbivores in a savannah exhibit</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">Oh no! You did not meet the requirements for the number of carnivores and herbivores!</LOC_STRING>		
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">Great work! You have met the initial requirements for the savannah carnivores and herbivores!</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">Run the savannah exhibit for four months without getting any herbivores injured</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">Oh no! One of your carnivores have killed a herbivore.</LOC_STRING>	
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">Great work! You have managed to run the savannah exhibit without any herbivores getting injured!</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">Ayez au moins quatre carnivores et six herbivores dans un enclos de type savane.</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">Oh non! Vous n'avez pas répondu aux exigences pour le nombre de carnivores et d'herbivores!</LOC_STRING>		
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">Bien joué! Vous avez satisfait les exigences initiales de vos carnivores et herbivores de la savane!</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">Gérez l'enclos de type savane pendant quatre mois sans qu'aucun herbivores ne soit blessé.</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">Oh non! Un de vos carnivores a tué un herbivore.</LOC_STRING>	
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">Bien joué! Vous avez réussi a gérez votre enclos de type savane sans qu'aucun herbivores ne soit blessé!</LOC_STRING>
 </ZT2Strings>

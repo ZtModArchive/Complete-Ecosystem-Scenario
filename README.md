@@ -28,7 +28,7 @@ The mod might not work with all versions of _Zoo Tycoon 2_.
 | Zoo Tycoon 2 | ![Tested](https://img.shields.io/badge/20.09.00.0005--beta-untested-inactive)<br/>![Tested](https://img.shields.io/badge/20.10.00.0006-untested-inactive)
 | Endangered Species | |
 | African Adventure | |
-| Marine Mania | ![Tested](https://img.shields.io/badge/30.06.00.0001--beta-untested-inactive)<br/>![Tested](https://img.shields.io/badge/30.07.00.0003--beta-untested-inactive)
+| Marine Mania | ![Tested](https://img.shields.io/badge/30.06.00.0001--beta-tested-success)<br/>![Tested](https://img.shields.io/badge/30.07.00.0003--beta-tested-success)
 | Extinct Animals  | ![Tested](https://img.shields.io/badge/32.10.00.0009-tested-success)<br/>![Tested](https://img.shields.io/badge/33.05.00.0002UO-tested-success)  |
 
 _<sup>*</sup> Except for beta releases, this includes the installation of all prior expansions._
@@ -52,7 +52,13 @@ This mod adds in a cut scenario under the _The Globe_ campaign series, it is the
 - Chinese (Traditional)
 - Dutch
 - English
+- French
+- German
 - Japanese
+- Korean
+- Portuguese (Brazil)
+- Spanish
+
 
 ## Building
 
@@ -85,7 +91,12 @@ castor serve
 ### Translation
 
 - [_Apodemus_](https://github.com/Zt-freak) - Dutch, English
-- [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese (rough translation), English, Japanese (rough translation)
+- _DarthQuell_ - Spanish
+- _DL_Baryonyx_ - French
+- _Jorge Gabriel_ - Portuguese (Brazil)
+- _Lelka_ - Korean
+- [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese, English, Japanese (rough translation)
+- [_HENDRIX_](https://github.com/HENDRIX-ZT2) - German
 
 ### Special thanks
 
