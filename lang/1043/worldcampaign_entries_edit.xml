@@ -2,10 +2,10 @@
     <LOC_STRING _locID="TheWorld:AsianAnimalsSuccessoverview" version="3">De uitbreiding met deze zeldzame Aziatische dieren heeft het verwachte positieve effect op de bezoekersaantallen van je dierentuin. Je dierentuin floreert en de Raad van Bestuur is bijzonder te spreken over je resultaten.     </LOC_STRING>
 	<LOC_STRING _locID="TheWorld:HugeBiomeoverviewshort" version="3">  Maak een savanneverblijf waarin zowel planteneters als vleeseters zijn ondergebracht, maar zorg ervoor dat je vleeseters goed gevoed worden om vervelende ongelukjes te voorkomen! Voltooi alle scenario's in deze campagne om het standbeeld met wereldbol te ontgrendelen.       </LOC_STRING>
 	<LOC_STRING _locID="TheWorld:HugeBiomeSuccessoverview" version="3">Je ecosysteem was gedurende de proefperiode van vier maanden een groot succes. Gasten vonden de expositie geweldig, ondanks de zware druk op het dierentuinpersoneel dat de vleeseters verzadigd moet houden! Ter bekroning van je succes krijg je het standbeeld met wereldbol, dat je bij al je toekomstige initiatieven kunt gebruiken.      </LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">Heb minstens vier carnivoren en zes herbivoren in een savanneverblijf</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">Heb minstens vier carnivoren en zes herbivoren in een savanneverblijf.</LOC_STRING>
     <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">Oh nee! Je voldoet niet aan het vereiste aantal carnivoren en herbivoren!</LOC_STRING>		
     <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">Goed gedaan! Je voldoet aan de initiële eisen voor de savanneherbivoren en carnivoren!</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">Houd het savanneverblijf voor vier maanden zonder dat de herbivoren gewond raken</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">Houd het savanneverblijf voor vier maanden zonder dat de herbivoren gewond raken.</LOC_STRING>
     <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">Oh nee! Een van de carnivoren heeft een herbivoor gedood.</LOC_STRING>	
     <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">Goed gedaan! Je hebt het savanneverblijf gehouden zonder verwonde herbivoren!</LOC_STRING>	
 </ZT2Strings>

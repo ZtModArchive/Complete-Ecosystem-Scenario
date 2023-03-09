@@ -2,10 +2,10 @@
     <LOC_STRING _locID="TheWorld:AsianAnimalsSuccessoverview" version="3">O acréscimo desses raros animais asiáticos teve o impacto positivo esperado na visitação ao zoológico. O zoológico está prosperando e a diretoria está muito satisfeita com os seus resultados.     </LOC_STRING>
 	<LOC_STRING _locID="TheWorld:HugeBiomeoverviewshort" version="3">  Crie uma jaula de savana que contenha herbívoros e carnívoros, mas mantenha os carnívoros bem alimentados para evitar acidentes! Complete todos os cenários desta campanha para receber a estátua com globo!       </LOC_STRING>
 	<LOC_STRING _locID="TheWorld:HugeBiomeSuccessoverview" version="3">O ecossistema obteve êxito durante o período de teste de quatro meses. Os visitantes gostaram muito da jaula, apesar do estresse adicional sobre os funcionários do zoológico para manter os carnívoros sempre saciados! Em reconhecimento pela sua conquista, você recebeu a estátua com globo, que poderá usar em todos os seus projetos futuros.      </LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">Have at least four carnivores and six herbivores in a savannah exhibit</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">Oh no! You did not meet the requirements for the number of carnivores and herbivores!</LOC_STRING>		
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">Great work! You have met the initial requirements for the savannah carnivores and herbivores!</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">Run the savannah exhibit for four months without getting any herbivores injured</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">Oh no! One of your carnivores have killed a herbivore.</LOC_STRING>	
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">Great work! You have managed to run the savannah exhibit without any herbivores getting injured!</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">Tenha pelo menos quatro carnívoros e seis herbívoros na sua jaula de savana.</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">Essa não! Você não atendeu os requisitos para o número de carnívoros e herbívoros!</LOC_STRING>		
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">Muito bem! Você atendeu os requisitos para o número de carnívoros e herbívoros da savana!</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">Administre uma jaula de savana por quatro meses sem que nem um herbívoro seja ferido.</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">Essa não! Um dos seus carnívoros matou um herbívoro!</LOC_STRING>	
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">Muito bem! Você condutou em administrar a jaula de savanna sem que qualquer herbívoro seja ferido!</LOC_STRING>
 </ZT2Strings>
