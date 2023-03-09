@@ -42,22 +42,23 @@ Alternatively you may add it to your `.z2f` but don't compress the jpg file. Cas
 
 This mod adds in a cut scenario under the _The Globe_ campaign series, it is the last one in this campaign (fourth in beta 1).
 
--   [x] Check if 6 savannah herbivores and 4 savannah carnivores are in the same habitat.
--   [x] Check if a savannah herbivore has been attacked and killed.
--   [ ] Check if a guest has witnessed the attack.
--   [x] Check if a 4 months have passed with enough savannah animals sharing the same habitat
+- [x] Check if 6 savannah herbivores and 4 savannah carnivores are in the same habitat.
+- [x] Check if a savannah herbivore has been attacked and killed.
+- [ ] Check if a guest has witnessed the attack.
+- [x] Check if a 4 months have passed with enough savannah animals sharing the same habitat
 
 ### Language support
 
--   Chinese (Traditional)
--   Dutch
--   English
--   French
--   German
--   Japanese
--   Korean
--   Portuguese (Brazil)
--   Spanish
+- Chinese (Traditional)
+- Dutch
+- English
+- French
+- German
+- Japanese
+- Korean
+- Portuguese (Brazil)
+- Spanish
+
 
 ## Building
 
@@ -83,21 +84,21 @@ castor serve
 
 ### Programming
 
--   [_Apodemus_](https://github.com/Zt-freak)
--   [_LoliJuicy_](https://github.com/LoliJuicy)
--   [_Thom_](https://github.com/TheThommerd)
+- [_Apodemus_](https://github.com/Zt-freak)
+- [_LoliJuicy_](https://github.com/LoliJuicy)
+- [_Thom_](https://github.com/TheThommerd)
 
 ### Translation
 
--   [_Apodemus_](https://github.com/Zt-freak) - Dutch, English
--   _DarthQuell_ - Spanish
--   _DL_Baryonyx_ - French
--   _Jorge Gabriel_ - Portuguese (Brazil)
--   _Lelka_ - Korean
--   [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese, English, Japanese (rough translation)
--   [_HENDRIX_](https://github.com/HENDRIX-ZT2) - German
+- [_Apodemus_](https://github.com/Zt-freak) - Dutch, English
+- _DarthQuell_ - Spanish
+- _DL_Baryonyx_ - French
+- _Jorge Gabriel_ - Portuguese (Brazil)
+- _Lelka_ - Korean
+- [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese, English, Japanese (rough translation)
+- [_HENDRIX_](https://github.com/HENDRIX-ZT2) - German
 
 ### Special thanks
 
--   _Blue Fang Games_ - Map design, scenario concept and the creation of _Zoo Tycoon 2_.
--   _March42_ - Publishing the Zoo Tycoon 2 Beta 20.09.00.0005
+- _Blue Fang Games_ - Map design, scenario concept and the creation of _Zoo Tycoon 2_.
+- _March42_ - Publishing the Zoo Tycoon 2 Beta 20.09.00.0005
