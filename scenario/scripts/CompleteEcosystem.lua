@@ -97,6 +97,7 @@ evalhugebiome = function(l_2_arg0)
 			hideRule("HugeBiomecounter")
 			genericokpanel(nil, "TheWorld:HugeBiomeoverallquotafailed")
 			l_2_arg0.quotaDone = nil
+            setglobalvar("SHAREDHABITATSTRIKES", 0)
         else
             setglobalvar("SHAREDHABITATSTRIKES", tonumber(strikes) + 1)
 		end
