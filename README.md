@@ -44,7 +44,7 @@ This mod adds in a cut scenario under the _The Globe_ campaign series, it is the
 
 - [x] Check if 6 savannah herbivores and 4 savannah carnivores are in the same habitat.
 - [x] Check if a savannah herbivore has been attacked and killed.
-- [ ] Check if a guest has witnessed the attack.
+- [x] Check if a guest has witnessed the attack.
 - [x] Check if a 4 months have passed with enough savannah animals sharing the same habitat
 
 ### Language support

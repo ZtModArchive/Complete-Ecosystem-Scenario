@@ -104,10 +104,15 @@ evalhugebiome = function(l_2_arg0)
 
 	if checkForHerbivoreCarcasses() then
 		setRuleState("HugeBiomequota", "failure")
-		setRuleState("HugeBiomecounter", "failure")		
-		return -1
+		setRuleState("HugeBiomecounter", "failure")
+
+		if guestHasNearbyCarcass() == true then
+			failwitnessworldcampaignscen4()
+		else
+			return -1
+		end	
 	end
-		
+	
     setSavannahAnimalsLists()
     return 0
 end
@@ -258,6 +263,8 @@ checkForHerbivoreCarcasses = function()
                 end
 
                 if not herbivoreWasFound then
+					setglobalvar("CARCASSFOUND", carcass:BFG_GET_ATTR_STRING("s_name"))
+					setglobalvar("CARCASSFOUNDID", ""..getID(carcass))	
                     return true
                 end
             end
@@ -305,6 +312,108 @@ checkHerbivoresAlive = function()
     end
 
     return true
+end
+
+--- Checks if a guest is near a herbivore carcass
+--- @return bool
+guestHasNearbyCarcass = function()
+    local guests = findType("Guest")
+    local carcasses = findType("Carcass_Meat")
+	local carcassID
+	local carcassPos
+	
+    if guests == nil or getglobalvar("CARCASSFOUND") == nil or getglobalvar("CARCASSFOUND") == "" then
+        return false
+	else
+		carcassID = tonumber(getglobalvar("CARCASSFOUNDID"))
+		carcassPos = findEntityByID(carcassID):BFG_GET_ENTITY_POSITION()	
+    end
+    
+    for i = 1, table.getn(guests) do
+        local guest = resolveTable(guests[i].value)
+        
+        if hasCarcassWithinRange(guest, carcassPos, 5, 30) then
+			local luckywinner = guest:BFG_GET_ATTR_STRING("s_name")
+		--	print("The lucky winner is..." .. luckywinner .. "!")
+		--	io.flush()
+            return true
+        end
+    end
+    
+    return false
+end
+
+--- Checks if a guest is within range of carcass
+--- @return bool
+hasCarcassWithinRange = function(entity, entitiesToCompare, min, max)
+    if entity == nil or entitiesToCompare == nil then
+        return false
+    end
+    
+    local guestPos = entity:BFG_GET_ENTITY_POSITION()
+
+    local distance = getDistance(guestPos, entitiesToCompare)
+        
+--    print(distance)
+--    io.flush()
+
+    if distance >= min and distance <= max then
+        return true
+    end
+    
+    return false
+end
+
+--- Checks if entity is nearby another entity
+--- @return bool
+HasNearbyEntity = function(e1, e2)
+    local type1 = findType("e1")
+    local type2 = findType("e2")
+
+    if type2 == nil or type1 == nil then
+        return false
+    end
+    
+    for i = 1, table.getn(type1) do
+        local et1 = resolveTable(type1[i].value)
+        
+        if hasEntityWithinRange(et1, e2, 5, 30) then
+            return true
+        end
+    end
+    
+    return false
+end
+
+--- Checks if nearby entity is within range of another entity
+--- @return bool
+hasEntityWithinRange = function(entity, entitiesToCompare, min, max)
+    if entity == nil or entitiesToCompare == nil then
+        return false
+    end
+    
+    local originalPos = entity:BFG_GET_ENTITY_POSITION()
+
+    for i = 1, table.getn(entitiesToCompare) do
+        local compareEntity = resolveTable(entitiesToCompare[i].value)
+        local comparePos = compareEntity:BFG_GET_ENTITY_POSITION()
+        local distance = getDistance(originalPos, comparePos)
+        
+    --    print(distance)
+    --    io.flush()
+
+        if distance <= min and distance >= max then
+            return true
+        end
+    end
+    
+    return false
+end
+
+getDistance = function(p1, p2)
+    local deltaX = p1.x - p2.x
+    local deltaY = p1.y - p2.y
+    return math.sqrt(deltaX * deltaX + deltaY * deltaY)
 end
 
 function try(func)
