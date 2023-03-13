@@ -8,6 +8,7 @@ include("scenario/scripts/token.lua")
 HERBIVORE_QUOTA = 6
 CARNIVORE_QUOTA = 4
 MONTH_QUOTA = 4
+SHAREDHABITAT_BUFFER = 3
 
 evaldebugging = function()
 
@@ -76,6 +77,7 @@ evalhugebiome = function(l_2_arg0)
 	
 		local startingMonth = getglobalvar("STARTINGMONTH")
 		local allowanceMonth = getglobalvar("ALLOWANCEMONTH")
+		local strikes = getglobalvar("SHAREDHABITATSTRIKES")
 
 		if startingMonth == nil then
 			setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
@@ -88,12 +90,16 @@ evalhugebiome = function(l_2_arg0)
 				l_2_arg0.counterDone = 1
 				return 1
 			end
-		else
+            setglobalvar("SHAREDHABITATSTRIKES", 0)
+		elseif tonumber(strikes) >= SHAREDHABITAT_BUFFER then
 			setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
 			setRuleState("HugeBiomequota", "neutral")
 			hideRule("HugeBiomecounter")
 			genericokpanel(nil, "TheWorld:HugeBiomeoverallquotafailed")
-			l_2_arg0.quotaDone = nil		
+			l_2_arg0.quotaDone = nil
+            setglobalvar("SHAREDHABITATSTRIKES", 0)
+        else
+            setglobalvar("SHAREDHABITATSTRIKES", tonumber(strikes) + 1)
 		end
 
 		if tostring(getCurrentMonth()) ~= allowanceMonth then
