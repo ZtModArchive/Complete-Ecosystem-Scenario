@@ -90,6 +90,7 @@ evalhugebiome = function(l_2_arg0)
 				l_2_arg0.counterDone = 1
 				return 1
 			end
+            setglobalvar("SHAREDHABITATSTRIKES", 0)
 		elseif tonumber(strikes) >= SHAREDHABITAT_BUFFER then
 			setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
 			setRuleState("HugeBiomequota", "neutral")
