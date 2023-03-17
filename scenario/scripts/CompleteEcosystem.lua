@@ -23,6 +23,9 @@ evaldebugging = function()
     ----- Debug giveCash
     if getglobalvar("HERBIVOREIDS") == nil then
         giveCash(500000)
+        try(function()
+            completehugebiome()
+        end)
     end
 
     ----- Setting up IDs... 
@@ -120,18 +123,23 @@ evalhugebiome = function(l_2_arg0)
 end
 
 completehugebiome = function()
-    giveGuest(8)
-
-    local guests = findType("Guest")
-
-    resolveTable(guests[table.getn(guests)-0].value):BFG_SET_ATTR_STRING("s_name", "LoliJuicy")
-    resolveTable(guests[table.getn(guests)-1].value):BFG_SET_ATTR_STRING("s_name", "Apodemus")
-    resolveTable(guests[table.getn(guests)-2].value):BFG_SET_ATTR_STRING("s_name", "Thom")
-    resolveTable(guests[table.getn(guests)-3].value):BFG_SET_ATTR_STRING("s_name", "DarthQuell")
-    resolveTable(guests[table.getn(guests)-4].value):BFG_SET_ATTR_STRING("s_name", "DL_Baryonyx")
-    resolveTable(guests[table.getn(guests)-5].value):BFG_SET_ATTR_STRING("s_name", "Jorge Gabriel")
-    resolveTable(guests[table.getn(guests)-6].value):BFG_SET_ATTR_STRING("s_name", "Lelka")
-    resolveTable(guests[table.getn(guests)-7].value):BFG_SET_ATTR_STRING("s_name", "HENDRIX")
+    local entancePos = getZooEntrancePos()
+    placeObject("Guest_Adult_M_01", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "LoliJuicy")
+    placeObject("Guest_Adult_F_02", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "Apodemus")
+    placeObject("Guest_Adult_M_01", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "Thom")
+    placeObject("Guest_Adult_M_02", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "DarthQuell")
+    placeObject("Guest_Adult_M_01", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "DL_Baryonyx")
+    placeObject("Guest_Adult_M_02", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "Jorge Gabriel")
+    placeObject("Guest_Adult_M_01", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "Lelka")
+    placeObject("Guest_Adult_M_02", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "HENDRIX")
 end
 
 completeworldcampaignscen4 = function()
