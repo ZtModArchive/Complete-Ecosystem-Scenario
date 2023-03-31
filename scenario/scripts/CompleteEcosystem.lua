@@ -15,9 +15,6 @@ evaldebugging = function()
     ----- Debug giveCash
     if getglobalvar("HERBIVOREIDS") == nil then
         giveCash(500000)
-        try(function()
-            completehugebiome()
-        end)
     end
 end
 
