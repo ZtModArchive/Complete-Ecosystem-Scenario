@@ -9,17 +9,9 @@ HERBIVORE_QUOTA = 6
 CARNIVORE_QUOTA = 4
 MONTH_QUOTA = 4
 SHAREDHABITAT_BUFFER = 3
+ENV_MODE = "production"
 
 evaldebugging = function()
-
-    ----- Debug Entity Pos
-    try(function()
-        local guest = resolveTable(findType("Guest_Adult_F")[1].value)
-        local pos = guest:BFG_GET_ENTITY_POSITION()
-        print("Pos X=" .. pos.x .. " Y=" .. pos.y)
-        io.flush()
-    end)
-
     ----- Debug giveCash
     if getglobalvar("HERBIVOREIDS") == nil then
         giveCash(500000)
@@ -27,33 +19,15 @@ evaldebugging = function()
             completehugebiome()
         end)
     end
-
-    ----- Setting up IDs... 
-    if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
-
-        local herbivores = split(getglobalvar("HERBIVOREIDS"), ",")
-        local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
-
-        if table.getn(herbivores) >= HERBIVORE_QUOTA and table.getn(carnivores) >= CARNIVORE_QUOTA then
-            setRuleState("HugeBiomeoverall", "neutral")
-            showRule("HugeBiomeoverall")
-            completeshowoverview()
-            return 1
-        end
-    end
-
-    if checkForHerbivoreCarcasses() then
-        setRuleState("HugeBiomequota", "failure")
-        return -1
-    end
-
-    setSavannahAnimalsLists()
-    return 0
 end
 
 --- Main evaluation
 --- @return number
 evalhugebiome = function(l_2_arg0)
+
+    if ENV_MODE == "development" then
+        evaldebugging()
+    end
 
     if l_2_arg0.quotaDone == nil then
         if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
@@ -73,7 +47,6 @@ evalhugebiome = function(l_2_arg0)
     end
 
     if l_2_arg0.quotaDone == 1 and l_2_arg0.counterDone == nil then
-
         local startingMonth = getglobalvar("STARTINGMONTH")
         local allowanceMonth = getglobalvar("ALLOWANCEMONTH")
         local strikes = getglobalvar("SHAREDHABITATSTRIKES")
@@ -89,16 +62,16 @@ evalhugebiome = function(l_2_arg0)
                 l_2_arg0.counterDone = 1
                 return 1
             end
-            setglobalvar("SHAREDHABITATSTRIKES", 0)
+            setglobalvar("SHAREDHABITATSTRIKES", tostring(0))
         elseif tonumber(strikes) >= SHAREDHABITAT_BUFFER then
             setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
             setRuleState("HugeBiomequota", "neutral")
             hideRule("HugeBiomecounter")
             genericokpanel(nil, "TheWorld:HugeBiomeoverallquotafailed")
             l_2_arg0.quotaDone = nil
-            setglobalvar("SHAREDHABITATSTRIKES", 0)
+            setglobalvar("SHAREDHABITATSTRIKES", tostring(0))
         else
-            setglobalvar("SHAREDHABITATSTRIKES", tonumber(strikes) + 1)
+            setglobalvar("SHAREDHABITATSTRIKES", tostring(tonumber(strikes) + 1))
         end
 
         if tostring(getCurrentMonth()) ~= allowanceMonth then
@@ -359,8 +332,6 @@ guestHasNearbyCarcass = function()
 
         if hasCarcassWithinRange(guest, carcassPos, 5, 30) then
             local luckywinner = guest:BFG_GET_ATTR_STRING("s_name")
-            --	print("The lucky winner is..." .. luckywinner .. "!")
-            --	io.flush()
             return true
         end
     end
@@ -376,11 +347,7 @@ hasCarcassWithinRange = function(entity, entitiesToCompare, min, max)
     end
 
     local guestPos = entity:BFG_GET_ENTITY_POSITION()
-
     local distance = getDistance(guestPos, entitiesToCompare)
-
-    --    print(distance)
-    --    io.flush()
 
     if distance >= min and distance <= max then
         return true
@@ -423,9 +390,6 @@ hasEntityWithinRange = function(entity, entitiesToCompare, min, max)
         local compareEntity = resolveTable(entitiesToCompare[i].value)
         local comparePos = compareEntity:BFG_GET_ENTITY_POSITION()
         local distance = getDistance(originalPos, comparePos)
-
-        --    print(distance)
-        --    io.flush()
 
         if distance <= min and distance >= max then
             return true
