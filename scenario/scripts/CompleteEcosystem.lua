@@ -274,44 +274,6 @@ checkForHerbivoreCarcasses = function()
     end
 end
 
---- Checks if all savannah herbivores from the global HERBIVORE_IDS are still present
---- @return bool
-checkHerbivoresAlive = function()
-    local savedHerbivoreIds = split(getglobalvar("HERBIVOREIDS"), ",")
-    local savannahAnimals = getAnimalsFromBiome("savannah")
-    local herbivoreIds = {}
-
-    if savedHerbivoreIds == nil or savannahAnimals == nil then
-        return false
-    end
-
-    for i = 1, table.getn(savannahAnimals) do
-        local animal = resolveTable(savannahAnimals[i].value)
-        if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") or
-            animal:BFG_GET_ATTR_BOOLEAN("b_Graminivore") then
-            table.insert(herbivoreIds, getID(animal))
-        end
-    end
-
-    for i = 1, table.getn(savedHerbivoreIds) do
-
-        local savedHerbivoreId = savedHerbivoreIds[i]
-        local stillExists = false
-
-        for j = 1, table.getn(herbivoreIds) do
-            if tonumber(herbivoreIds[j]) == tonumber(savedHerbivoreId) then
-                stillExists = true
-            end
-        end
-
-        if not stillExists then
-            return false
-        end
-    end
-
-    return true
-end
-
 --- Checks if a guest is near a herbivore carcass
 --- @return bool
 guestHasNearbyCarcass = function()
@@ -351,49 +313,6 @@ hasCarcassWithinRange = function(entity, entitiesToCompare, min, max)
 
     if distance >= min and distance <= max then
         return true
-    end
-
-    return false
-end
-
---- Checks if entity is nearby another entity
---- @return bool
-HasNearbyEntity = function(e1, e2)
-    local type1 = findType("e1")
-    local type2 = findType("e2")
-
-    if type2 == nil or type1 == nil then
-        return false
-    end
-
-    for i = 1, table.getn(type1) do
-        local et1 = resolveTable(type1[i].value)
-
-        if hasEntityWithinRange(et1, e2, 5, 30) then
-            return true
-        end
-    end
-
-    return false
-end
-
---- Checks if nearby entity is within range of another entity
---- @return bool
-hasEntityWithinRange = function(entity, entitiesToCompare, min, max)
-    if entity == nil or entitiesToCompare == nil then
-        return false
-    end
-
-    local originalPos = entity:BFG_GET_ENTITY_POSITION()
-
-    for i = 1, table.getn(entitiesToCompare) do
-        local compareEntity = resolveTable(entitiesToCompare[i].value)
-        local comparePos = compareEntity:BFG_GET_ENTITY_POSITION()
-        local distance = getDistance(originalPos, comparePos)
-
-        if distance <= min and distance >= max then
-            return true
-        end
     end
 
     return false
