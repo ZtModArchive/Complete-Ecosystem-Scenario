@@ -59,7 +59,6 @@ This mod adds in a cut scenario under the _The Globe_ campaign series, it is the
 - Portuguese (Brazil)
 - Spanish
 
-
 ## Building
 
 A vast majority of _Zoo Tycoon 2_ mods are either `.z2f` or `.zip` archives, this mod is no different. You can use Microsoft Windows' own file zipper to create zips.
@@ -97,6 +96,11 @@ castor serve
 - _Lelka_ - Korean
 - [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese, English, Japanese (rough translation)
 - [_HENDRIX_](https://github.com/HENDRIX-ZT2) - German
+
+### Translation
+
+-   [_Apodemus_](https://github.com/Zt-freak) - Dutch, English
+-   [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese (rough translation), English, Japanese (rough translation)
 
 ### Special thanks
 

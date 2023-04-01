@@ -1,7 +1,7 @@
 <ZT2Strings>
     <LOC_STRING _locID="TheWorld:AsianAnimalsSuccessoverview" version="3">希少なアジア原産の動物を展示に加えたことにより、入園者数は期待どおり増加しました。動物園の営業成績は好調で、理事会もあなたの挙げた成果をことのほか喜んでいます。     </LOC_STRING>
-	<LOC_STRING _locID="TheWorld:HugeBiomeoverviewshort" version="3">草食動物と肉食動物の両方を展示するサバンナの展示場を作ってください。ただし、不幸な事故を避けるために、肉食動物には常に十分なエサを与えてください!このキャンペーンのシナリオをすべてクリアすると、地球儀が利用できるようになります!       </LOC_STRING>
-	<LOC_STRING _locID="TheWorld:HugeBiomeSuccessoverview" version="3">あなたが作り上げた生態系の展示は順調に運営を続け、4 か月の試験期間が経過しました。肉食動物がお腹を空かせないように、動物園のスタッフはいつも以上に気を遣う必要がありましたが、来園者は、この展示を大いに楽しんでいました!その成果をたたえ地球儀が贈られました。地球儀は、今後いつでも利用できます。      </LOC_STRING>
+  	<LOC_STRING _locID="TheWorld:HugeBiomeoverviewshort" version="3">草食動物と肉食動物の両方を展示するサバンナの展示場を作ってください。ただし、不幸な事故を避けるために、肉食動物には常に十分なエサを与えてください!このキャンペーンのシナリオをすべてクリアすると、地球儀が利用できるようになります!       </LOC_STRING>
+  	<LOC_STRING _locID="TheWorld:HugeBiomeSuccessoverview" version="3">あなたが作り上げた生態系の展示は順調に運営を続け、4 か月の試験期間が経過しました。肉食動物がお腹を空かせないように、動物園のスタッフはいつも以上に気を遣う必要がありましたが、来園者は、この展示を大いに楽しんでいました!その成果をたたえ地球儀が贈られました。地球儀は、今後いつでも利用できます。      </LOC_STRING>
     <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">サバンナ展用に、4種類の肉食動物と6種類の草食動物を少なくとも買い付けてください。</LOC_STRING>
     <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">残念です!肉食動物と草食動物の目標数を達成できませんでした。</LOC_STRING>		
     <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">すばらしい!サバンナの肉食動物と草食動物の今回の目標数を達成しました。</LOC_STRING>

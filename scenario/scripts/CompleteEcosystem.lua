@@ -87,7 +87,6 @@ evalhugebiome = function(l_2_arg0)
             return -1
         end
     end
-
     setSavannahAnimalsLists()
     return 0
 end

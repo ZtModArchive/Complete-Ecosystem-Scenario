@@ -1,7 +1,7 @@
 <ZT2Strings>
     <LOC_STRING _locID="TheWorld:AsianAnimalsSuccessoverview" version="3">아시아의 희귀한 동물을 입양하자 예상대로 관람객이 많이 늘었습니다. 동물원은 성공적으로 운영되고 있으며 이사회도 매우 만족하고 있습니다.     </LOC_STRING>
-	<LOC_STRING _locID="TheWorld:HugeBiomeoverviewshort" version="3">초식 동물과 육식 동물이 함께 서식하는 사바나 우리를 만드세요. 육식 동물에게 먹이를 잘 줘야 불의의 사고를 막을 수 있다는 걸 명심하세요! 이 캠페인의 시나리오를 모두 마치면 지구 모형을 사용할 수 있습니다.       </LOC_STRING>
-	<LOC_STRING _locID="TheWorld:HugeBiomeSuccessoverview" version="3">4개월의 시험 운영 기간 동안 생태계 우리를 성공적으로 유지하였습니다. 관람객은 생태계 우리를 아주 좋아하는 반면 직원들은 육식 동물에게 먹이를 주느라 정신이 없습니다! 여러분은 뛰어난 업적을 이룬 공로로 지구 모형을 받게 되었습니다.      </LOC_STRING>
+	  <LOC_STRING _locID="TheWorld:HugeBiomeoverviewshort" version="3">초식 동물과 육식 동물이 함께 서식하는 사바나 우리를 만드세요. 육식 동물에게 먹이를 잘 줘야 불의의 사고를 막을 수 있다는 걸 명심하세요! 이 캠페인의 시나리오를 모두 마치면 지구 모형을 사용할 수 있습니다.       </LOC_STRING>
+  	<LOC_STRING _locID="TheWorld:HugeBiomeSuccessoverview" version="3">4개월의 시험 운영 기간 동안 생태계 우리를 성공적으로 유지하였습니다. 관람객은 생태계 우리를 아주 좋아하는 반면 직원들은 육식 동물에게 먹이를 주느라 정신이 없습니다! 여러분은 뛰어난 업적을 이룬 공로로 지구 모형을 받게 되었습니다.      </LOC_STRING>
     <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">사바나 우리에 최소 4마리의 육식동물과 6마리의 초식동물을 전시하세요.</LOC_STRING>
     <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">이런! 당신은 육식동물과 초식동물 수의 요구치를 달성하지 못하였습니다.</LOC_STRING>		
     <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">훌륭합니다! 당신은 사바나의 육식동물과 초식동물의 기본 요구 사항을 모두 충족하였습니다. </LOC_STRING>
