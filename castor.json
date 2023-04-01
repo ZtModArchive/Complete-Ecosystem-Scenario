@@ -1,5 +1,5 @@
 {
-  "ArchiveName": "zzz-LJApo_CompleteEcosystem_Beta",
+  "ArchiveName": "zzz-LJApo_CompleteEcosystem",
   "RepoName": "ZtModArchive/CompleteEcosystem",
   "Author": "Blue Fang",
   "Version": "v0.0.1",
@@ -21,6 +21,7 @@
     "materials",
     "photochall",
     "puzzles",
+    "schema",
     "scenario",
     "scripts",
     "shared",

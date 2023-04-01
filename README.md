@@ -3,7 +3,7 @@
 [![Validate](https://github.com/ZtModArchive/Complete-Ecosystem-Scenario/actions/workflows/validate.yml/badge.svg)](https://github.com/ZtModArchive/Complete-Ecosystem-Scenario/actions/workflows/validate.yml)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a6362bbac57d4243a1be0b8cb31c8ace)](https://www.codacy.com/gh/ZtModArchive/Complete-Ecosystem-Scenario/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ZtModArchive/Complete-Ecosystem-Scenario&amp;utm_campaign=Badge_Grade)
 [![License](https://img.shields.io/github/license/ZtModArchive/Complete-Ecosystem-Scenario)](https://github.com/ZtModArchive/Complete-Ecosystem-Scenario/blob/main/LICENSE)
-[![Discord Chat](https://img.shields.io/discord/1022821460584189972?label=Discord&logo=Discord)](https://discord.gg/QC6B83N6tD)
+[![Matrix](https://img.shields.io/matrix/ztmodarchive:matrix.org)](https://matrix.to/#/#ztmodarchive:matrix.org)
 
 > "_an animal was ...EATEN! (or just attacked : ) would be nice if we could differentiate the failure message depending on whether the eaten event was viewed by a guest or not..._"
 >
@@ -28,7 +28,7 @@ The mod might not work with all versions of _Zoo Tycoon 2_.
 | Zoo Tycoon 2 | ![Tested](https://img.shields.io/badge/20.09.00.0005--beta-untested-inactive)<br/>![Tested](https://img.shields.io/badge/20.10.00.0006-untested-inactive)
 | Endangered Species | |
 | African Adventure | |
-| Marine Mania | ![Tested](https://img.shields.io/badge/30.06.00.0001--beta-untested-inactive)<br/>![Tested](https://img.shields.io/badge/30.07.00.0003--beta-untested-inactive)
+| Marine Mania | ![Tested](https://img.shields.io/badge/30.06.00.0001--beta-tested-success)<br/>![Tested](https://img.shields.io/badge/30.07.00.0003--beta-tested-success)
 | Extinct Animals  | ![Tested](https://img.shields.io/badge/32.10.00.0009-tested-success)<br/>![Tested](https://img.shields.io/badge/33.05.00.0002UO-tested-success)  |
 
 _<sup>*</sup> Except for beta releases, this includes the installation of all prior expansions._
@@ -42,17 +42,22 @@ Alternatively you may add it to your `.z2f` but don't compress the jpg file. Cas
 
 This mod adds in a cut scenario under the _The Globe_ campaign series, it is the last one in this campaign (fourth in beta 1).
 
--   [x] Check if 6 savannah herbivores and 4 savannah carnivores are in the same habitat.
--   [x] Check if a savannah herbivore has been attacked and killed.
--   [ ] Check if a guest has witnessed the attack.
--   [x] Check if a 4 months have passed with enough savannah animals sharing the same habitat
+- [x] Check if 6 savannah herbivores and 4 savannah carnivores are in the same habitat.
+- [x] Check if a savannah herbivore has been attacked and killed.
+- [x] Check if a guest has witnessed the attack.
+- [x] Check if a 4 months have passed with enough savannah animals sharing the same habitat
 
 ### Language support
 
--   Chinese (Traditional)
--   Dutch
--   English
--   Japanese
+- Chinese (Traditional)
+- Dutch
+- English
+- French
+- German
+- Japanese
+- Korean
+- Portuguese (Brazil)
+- Spanish
 
 ## Building
 
@@ -78,9 +83,19 @@ castor serve
 
 ### Programming
 
--   [_Apodemus_](https://github.com/Zt-freak)
--   [_LoliJuicy_](https://github.com/LoliJuicy)
--   [_Thom_](https://github.com/TheThommerd)
+- [_Apodemus_](https://github.com/Zt-freak)
+- [_LoliJuicy_](https://github.com/LoliJuicy)
+- [_Thom_](https://github.com/TheThommerd)
+
+### Translation
+
+- [_Apodemus_](https://github.com/Zt-freak) - Dutch, English
+- _DarthQuell_ - Spanish
+- _DL_Baryonyx_ - French
+- _Jorge Gabriel_ - Portuguese (Brazil)
+- _Lelka_ - Korean
+- [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese, English, Japanese (rough translation)
+- [_HENDRIX_](https://github.com/HENDRIX-ZT2) - German
 
 ### Translation
 
@@ -89,5 +104,5 @@ castor serve
 
 ### Special thanks
 
--   _Blue Fang Games_ - Map design, scenario concept and the creation of _Zoo Tycoon 2_.
--   _March42_ - Publishing the Zoo Tycoon 2 Beta 20.09.00.0005
+- _Blue Fang Games_ - Map design, scenario concept and the creation of _Zoo Tycoon 2_.
+- _March42_ - Publishing the Zoo Tycoon 2 Beta 20.09.00.0005

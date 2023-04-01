@@ -8,129 +8,125 @@ include("scenario/scripts/token.lua")
 HERBIVORE_QUOTA = 6
 CARNIVORE_QUOTA = 4
 MONTH_QUOTA = 4
+SHAREDHABITAT_BUFFER = 3
+ENV_MODE = "production"
 
 evaldebugging = function()
-
------ Debug Entity Pos
-    try(
-        function ()
-            local guest = resolveTable(findType("Guest_Adult_F")[1].value)
-            guest:BFG_SET_ATTR_STRING("s_name", "LoliJuicy")
-            local pos = guest:BFG_GET_ENTITY_POSITION()
-            print("Pos X=" .. pos.x .. " Y=" .. pos.y)
-            io.flush()
-        end
-    )
-    
------ Debug giveCash
+    ----- Debug giveCash
     if getglobalvar("HERBIVOREIDS") == nil then
         giveCash(500000)
     end
-	
------ Setting up IDs... 
-    if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
-        
-
-        local herbivores = split(getglobalvar("HERBIVOREIDS"), ",")
-        local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
-
-        if table.getn(herbivores) >= HERBIVORE_QUOTA and table.getn(carnivores) >= CARNIVORE_QUOTA then
-            setRuleState("HugeBiomeoverall", "neutral")
-            showRule("HugeBiomeoverall")
-            completeshowoverview()
-            return 1
-        end
-    end
-
-	if checkForHerbivoreCarcasses() then
-		setRuleState("HugeBiomequota", "failure")	
-		return -1
-	end
-	
-    setSavannahAnimalsLists()
-    return 0	
 end
 
 --- Main evaluation
 --- @return number
 evalhugebiome = function(l_2_arg0)
-	
-	if l_2_arg0.quotaDone == nil then
-	    if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
-	
-			local herbivores = split(getglobalvar("HERBIVOREIDS"), ",")
-			local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
 
-			if table.getn(herbivores) >= HERBIVORE_QUOTA and table.getn(carnivores) >= CARNIVORE_QUOTA then
-				if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then				
-					genericokpanel(nil, "TheWorld:HugeBiomeoverallquotadone")
-					setRuleState("HugeBiomequota", "success")
-					showRule("HugeBiomecounter")
-					l_2_arg0.quotaDone = 1
-				end		
-			end
-		end	
-	end
+    if ENV_MODE == "development" then
+        evaldebugging()
+    end
 
-	if l_2_arg0.quotaDone == 1 and l_2_arg0.counterDone == nil then
-	
-		local startingMonth = getglobalvar("STARTINGMONTH")
-		local allowanceMonth = getglobalvar("ALLOWANCEMONTH")
+    if l_2_arg0.quotaDone == nil then
+        if getglobalvar("HERBIVOREIDS") ~= nil and getglobalvar("CARNIVOREIDS") ~= nil then
 
-		if startingMonth == nil then
-			setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
-			startingMonth = getglobalvar("STARTINGMONTH")
-		end
+            local herbivores = split(getglobalvar("HERBIVOREIDS"), ",")
+            local carnivores = split(getglobalvar("CARNIVOREIDS"), ",")
 
-		if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then
-			if (tonumber(startingMonth) + MONTH_QUOTA <= getCurrentMonth()) then
-				setRuleState("HugeBiomecounter", "success")
-				l_2_arg0.counterDone = 1
-				return 1
-			end
-		else
-			setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
-			setRuleState("HugeBiomequota", "neutral")
-			hideRule("HugeBiomecounter")
-			genericokpanel(nil, "TheWorld:HugeBiomeoverallquotafailed")
-			l_2_arg0.quotaDone = nil		
-		end
+            if table.getn(herbivores) >= HERBIVORE_QUOTA and table.getn(carnivores) >= CARNIVORE_QUOTA then
+                if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then
+                    genericokpanel(nil, "TheWorld:HugeBiomeoverallquotadone")
+                    setRuleState("HugeBiomequota", "success")
+                    showRule("HugeBiomecounter")
+                    l_2_arg0.quotaDone = 1
+                end
+            end
+        end
+    end
 
-		if tostring(getCurrentMonth()) ~= allowanceMonth then
-			giveCash(2000)
-			setglobalvar("ALLOWANCEMONTH", tostring(getCurrentMonth()))
-		end
-	end
+    if l_2_arg0.quotaDone == 1 and l_2_arg0.counterDone == nil then
+        local startingMonth = getglobalvar("STARTINGMONTH")
+        local allowanceMonth = getglobalvar("ALLOWANCEMONTH")
+        local strikes = getglobalvar("SHAREDHABITATSTRIKES")
 
-	if checkForHerbivoreCarcasses() then
-		setRuleState("HugeBiomequota", "failure")
-		setRuleState("HugeBiomecounter", "failure")		
-		return -1
-	end
-		
+        if startingMonth == nil then
+            setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
+            startingMonth = getglobalvar("STARTINGMONTH")
+        end
+
+        if countSavannahAnimalsInSameHabitat() >= HERBIVORE_QUOTA then
+            if (tonumber(startingMonth) + MONTH_QUOTA <= getCurrentMonth()) then
+                setRuleState("HugeBiomecounter", "success")
+                l_2_arg0.counterDone = 1
+                return 1
+            end
+            setglobalvar("SHAREDHABITATSTRIKES", tostring(0))
+        elseif tonumber(strikes) >= SHAREDHABITAT_BUFFER then
+            setglobalvar("STARTINGMONTH", tostring(getCurrentMonth()))
+            setRuleState("HugeBiomequota", "neutral")
+            hideRule("HugeBiomecounter")
+            genericokpanel(nil, "TheWorld:HugeBiomeoverallquotafailed")
+            l_2_arg0.quotaDone = nil
+            setglobalvar("SHAREDHABITATSTRIKES", tostring(0))
+        else
+            setglobalvar("SHAREDHABITATSTRIKES", tostring(tonumber(strikes) + 1))
+        end
+
+        if tostring(getCurrentMonth()) ~= allowanceMonth then
+            giveCash(2000)
+            setglobalvar("ALLOWANCEMONTH", tostring(getCurrentMonth()))
+        end
+    end
+
+    if checkForHerbivoreCarcasses() then
+        setRuleState("HugeBiomequota", "failure")
+        setRuleState("HugeBiomecounter", "failure")
+
+        if guestHasNearbyCarcass() == true then
+            failwitnessworldcampaignscen4()
+        else
+            return -1
+        end
+    end
     setSavannahAnimalsLists()
     return 0
 end
 
 completehugebiome = function()
+    local entancePos = getZooEntrancePos()
+    placeObject("Guest_Adult_M_01", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "LoliJuicy")
+    placeObject("Guest_Adult_F_02", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "Apodemus")
+    placeObject("Guest_Adult_M_01", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "Thom")
+    placeObject("Guest_Adult_M_02", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "DarthQuell")
+    placeObject("Guest_Adult_M_01", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "DL_Baryonyx")
+    placeObject("Guest_Adult_M_02", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "Jorge Gabriel")
+    placeObject("Guest_Adult_M_01", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "Lelka")
+    placeObject("Guest_Adult_M_02", entancePos.x, entancePos.y, entancePos.z)
+    resolveTable(findType("Guest")[table.getn(findType("Guest"))].value):BFG_SET_ATTR_STRING("s_name", "HENDRIX")
 end
 
 completeworldcampaignscen4 = function()
-   BFLOG(SYSTRACE, "completeworldcampaignscen4")
-   setuservar("worldcampaignscenario4", "completed")
-   setuservar("globelock", "true")
-   local l_6_0 = getlocidfromspecies("Statue_Globe_df")
-   local l_6_1 = getLocID("itemunlock:newitemgeneral") .. l_6_0
-   genericokpaneltext(nil, l_6_1)  
-   showscenariowin("TheWorld:HugeBiomeSuccessoverview", nil)  
+    BFLOG(SYSTRACE, "completeworldcampaignscen4")
+    setuservar("worldcampaignscenario4", "completed")
+    setuservar("globelock", "true")
+    local l_6_0 = getlocidfromspecies("Statue_Globe_df")
+    local l_6_1 = getLocID("itemunlock:newitemgeneral") .. l_6_0
+    genericokpaneltext(nil, l_6_1)
+    showscenariowin("TheWorld:HugeBiomeSuccessoverview", nil)
 end
 
 failworldcampaignscen4 = function()
-   showscenariofail("TheWorld:HugeBiomeFailureoverview", "worldcampaignscenario4")
+    showscenariofail("TheWorld:HugeBiomeFailureoverview", "worldcampaignscenario4")
 end
 
 failwitnessworldcampaignscen4 = function()
-   showscenariofail("TheWorld:HugeBiomeFailureWitnessedoverview", "worldcampaignscenario4")
+    showscenariofail("TheWorld:HugeBiomeFailureWitnessedoverview", "worldcampaignscenario4")
 end
 
 --- Sets global variables CARNIVORE_IDS and HERBIVORE_IDS
@@ -161,8 +157,9 @@ setSavannahAnimalsLists = function()
                 carnivoreIds = carnivoreIds .. "," .. getID(animal)
             end
         end
-		---- Disables Adopt, Release, and Crate to prevent loopholes
-        if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Graminivore") then
+        ---- Disables Adopt, Release, and Crate to prevent loopholes
+        if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") or
+            animal:BFG_GET_ATTR_BOOLEAN("b_Graminivore") then
             animal:BFG_SET_ATTR_BOOLEAN("b_showAdopt", false)
             animal:BFG_SET_ATTR_BOOLEAN("b_showRelease", false)
             animal:BFG_SET_ATTR_BOOLEAN("b_showCrate", false)
@@ -173,8 +170,8 @@ setSavannahAnimalsLists = function()
                 herbivoreIds = herbivoreIds .. "," .. getID(animal)
             end
 
-            setglobalvar("HERBIVORE"..herbivoreIndex, animal:BFG_GET_ATTR_STRING("s_name"))
-            setglobalvar("HERBIVOREID"..herbivoreIndex, ""..getID(animal))
+            setglobalvar("HERBIVORE" .. herbivoreIndex, animal:BFG_GET_ATTR_STRING("s_name"))
+            setglobalvar("HERBIVOREID" .. herbivoreIndex, "" .. getID(animal))
             herbivoreIndex = herbivoreIndex + 1
         end
     end
@@ -215,10 +212,10 @@ countSavannahAnimalsInSameHabitat = function()
             herbivoresInCarnivoreHabitat = herbivoresInCarnivoreHabitat + 1
         end
     end
-	
+
     return herbivoresInCarnivoreHabitat
 end
-	
+
 --- Checks if all there is a carcass belonging to a savannah herbivore present
 --- @return bool
 checkForHerbivoreCarcasses = function()
@@ -233,78 +230,94 @@ checkForHerbivoreCarcasses = function()
     local herbivoreIds = {}
     for i = 1, table.getn(savannahAnimals) do
         local animal = resolveTable(savannahAnimals[i].value)
-        if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Graminivore") then
+        if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") or
+            animal:BFG_GET_ATTR_BOOLEAN("b_Graminivore") then
             table.insert(herbivoreIds, getID(animal))
         end
     end
 
     local herbivoreIndex = 1
-    while(endOfHerbivoreNames == false) do
+    while (endOfHerbivoreNames == false) do
 
-        if getglobalvar("HERBIVORE"..herbivoreIndex) == nil or getglobalvar("HERBIVORE"..herbivoreIndex) == "" then
+        if getglobalvar("HERBIVORE" .. herbivoreIndex) == nil or getglobalvar("HERBIVORE" .. herbivoreIndex) == "" then
             endOfHerbivoreNames = true
             return false
         end
-        
+
         for i = 1, table.getn(carcasses) do
             local carcass = resolveTable(carcasses[i].value)
 
-            if string.find(carcass:BFG_GET_ATTR_STRING("s_name"), getglobalvar("HERBIVORE"..herbivoreIndex)) then
+            if string.find(carcass:BFG_GET_ATTR_STRING("s_name"), getglobalvar("HERBIVORE" .. herbivoreIndex)) then
                 local herbivoreWasFound = false
                 for j = 1, table.getn(herbivoreIds) do
-                    if herbivoreIds[j] == tonumber(getglobalvar("HERBIVOREID"..herbivoreIndex)) then
+                    if herbivoreIds[j] == tonumber(getglobalvar("HERBIVOREID" .. herbivoreIndex)) then
                         herbivoreWasFound = true
                     end
                 end
 
                 if not herbivoreWasFound then
+                    setglobalvar("CARCASSFOUND", carcass:BFG_GET_ATTR_STRING("s_name"))
+                    setglobalvar("CARCASSFOUNDID", "" .. getID(carcass))
                     return true
                 end
             end
         end
 
-        setglobalvar("HERBIVORE"..herbivoreIndex, "")
-        setglobalvar("HERBIVOREID"..herbivoreIndex, "")
+        setglobalvar("HERBIVORE" .. herbivoreIndex, "")
+        setglobalvar("HERBIVOREID" .. herbivoreIndex, "")
 
         herbivoreIndex = herbivoreIndex + 1
     end
 end
 
---- Checks if all savannah herbivores from the global HERBIVORE_IDS are still present
+--- Checks if a guest is near a herbivore carcass
 --- @return bool
-checkHerbivoresAlive = function()
-    local savedHerbivoreIds = split(getglobalvar("HERBIVOREIDS"), ",")
-    local savannahAnimals = getAnimalsFromBiome("savannah")
-    local herbivoreIds = {}
+guestHasNearbyCarcass = function()
+    local guests = findType("Guest")
+    local carcasses = findType("Carcass_Meat")
+    local carcassID
+    local carcassPos
 
-    if savedHerbivoreIds == nil or savannahAnimals == nil then
+    if guests == nil or getglobalvar("CARCASSFOUND") == nil or getglobalvar("CARCASSFOUND") == "" then
+        return false
+    else
+        carcassID = tonumber(getglobalvar("CARCASSFOUNDID"))
+        carcassPos = findEntityByID(carcassID):BFG_GET_ENTITY_POSITION()
+    end
+
+    for i = 1, table.getn(guests) do
+        local guest = resolveTable(guests[i].value)
+
+        if hasCarcassWithinRange(guest, carcassPos, 5, 30) then
+            local luckywinner = guest:BFG_GET_ATTR_STRING("s_name")
+            return true
+        end
+    end
+
+    return false
+end
+
+--- Checks if a guest is within range of carcass
+--- @return bool
+hasCarcassWithinRange = function(entity, entitiesToCompare, min, max)
+    if entity == nil or entitiesToCompare == nil then
         return false
     end
 
-    for i = 1, table.getn(savannahAnimals) do
-        local animal = resolveTable(savannahAnimals[i].value)
-        if animal:BFG_GET_ATTR_BOOLEAN("b_Folivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Granivore") or animal:BFG_GET_ATTR_BOOLEAN("b_Graminivore") then
-            table.insert(herbivoreIds, getID(animal))
-        end
+    local guestPos = entity:BFG_GET_ENTITY_POSITION()
+    local distance = getDistance(guestPos, entitiesToCompare)
+
+    if distance >= min and distance <= max then
+        return true
     end
 
-    for i = 1, table.getn(savedHerbivoreIds) do
+    return false
+end
 
-        local savedHerbivoreId = savedHerbivoreIds[i]
-        local stillExists = false
-
-        for j = 1, table.getn(herbivoreIds) do
-            if tonumber(herbivoreIds[j]) == tonumber(savedHerbivoreId) then
-                stillExists = true
-            end
-        end
-
-        if not stillExists then
-            return false
-        end
-    end
-
-    return true
+getDistance = function(p1, p2)
+    local deltaX = p1.x - p2.x
+    local deltaY = p1.y - p2.y
+    return math.sqrt(deltaX * deltaX + deltaY * deltaY)
 end
 
 function try(func)
