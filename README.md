@@ -1,6 +1,7 @@
 # Complete Ecosystem Scenario
 
 [![Validate](https://github.com/ZtModArchive/Complete-Ecosystem-Scenario/actions/workflows/validate.yml/badge.svg)](https://github.com/ZtModArchive/Complete-Ecosystem-Scenario/actions/workflows/validate.yml)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ZtModArchive/Complete-Ecosystem-Scenario)](https://github.com/ZtModArchive/Complete-Ecosystem-Scenario/releases)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a6362bbac57d4243a1be0b8cb31c8ace)](https://www.codacy.com/gh/ZtModArchive/Complete-Ecosystem-Scenario/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ZtModArchive/Complete-Ecosystem-Scenario&amp;utm_campaign=Badge_Grade)
 [![License](https://img.shields.io/github/license/ZtModArchive/Complete-Ecosystem-Scenario)](https://github.com/ZtModArchive/Complete-Ecosystem-Scenario/blob/main/LICENSE)
 [![Matrix](https://img.shields.io/matrix/ztmodarchive:matrix.org)](https://matrix.to/#/#ztmodarchive:matrix.org)
