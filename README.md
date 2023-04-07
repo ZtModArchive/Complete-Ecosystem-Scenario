@@ -57,6 +57,7 @@ This mod adds in a cut scenario under the _The Globe_ campaign series, it is the
 - German
 - Japanese
 - Korean
+- Polish
 - Portuguese (Brazil)
 - Spanish
 
@@ -97,6 +98,7 @@ castor serve
 - _Lelka_ - Korean
 - [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese, English, Japanese (rough translation)
 - [_HENDRIX_](https://github.com/HENDRIX-ZT2) - German
+- _MatikTheSeventh_ - Polish
 
 ### Special thanks
 
