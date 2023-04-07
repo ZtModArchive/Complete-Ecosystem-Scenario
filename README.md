@@ -99,6 +99,7 @@ castor serve
 - [_LoliJuicy_](https://github.com/LoliJuicy) - Chinese, English, Japanese (rough translation)
 - [_HENDRIX_](https://github.com/HENDRIX-ZT2) - German
 - _MatikTheSeventh_ - Polish
+
 ### Special thanks
 
 - _Blue Fang Games_ - Map design, scenario concept and the creation of _Zoo Tycoon 2_.
