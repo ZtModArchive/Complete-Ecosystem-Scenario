@@ -2,10 +2,10 @@
     <LOC_STRING _locID="TheWorld:AsianAnimalsSuccessoverview" version="3">Wprowadzenie rzadkich zwierząt azjatyckich przysporzyło zoo wielu zwiedzających. Placówka rozwija się, a Rada jest wyjątkowo zadowolona z twoich osiągnięć.     </LOC_STRING>
 	<LOC_STRING _locID="TheWorld:HugeBiomeoverviewshort" version="3">  Stwórz wystawę ze środowiskiem sawanny zawierającą zarówno zwierzęta roślinożerne, jak i mięsożerne. Upewnij się, że gatunki mięsożerne są należycie karmione, aby uniknąć przykrych incydentów. Zakończ wszystkie scenariusze tej kampanii, aby otrzymać statuetkę kuli ziemskiej!       </LOC_STRING>
 	<LOC_STRING _locID="TheWorld:HugeBiomeSuccessoverview" version="3">Twój ekosystem odnosił sukcesy przez czteromiesięczny okres próbny. Zwiedzającym bardzo podobała się wystawa, mimo dodatkowych utrudnień związanych z ciągłym pilnowaniem, aby zwierzęta mięsożerne nie pożarły roślinożernych! W uznaniu za wypełnienie zadania otrzymałeś statuetkę kuli ziemskiej, która przyda ci się we wszystkich następnych pracach.      </LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">Have at least four carnivores and six herbivores in a savannah exhibit.</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">Oh no! You did not meet the requirements for the number of carnivores and herbivores!</LOC_STRING>		
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">Good job! You have met the initial requirements for the savannah carnivores and herbivores!</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">Run the savannah exhibit for four months without getting any herbivores injured.</LOC_STRING>
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">Oh no! One of your carnivores has killed a herbivore.</LOC_STRING>	
-    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">Good job! You have managed to run the savannah exhibit without any herbivores getting injured!</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquota">Posiadaj przynajmniej cztery drapieżniki i sześć roślinożerców na wybiegu sawanny.</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotafailed">O nie! Nie spełniłeś wymagań dotyczących drapieżników i roślinożerców!</LOC_STRING>		
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallquotadone">Dobra robota! Spełniłeś wstępne wymagania dotyczące drapieżników i roślinożerców z sawanny!</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounter">Poprowadź wybieg sawanny przez cztery miesiące, nie doprowadzając do zranienia żadnego z roślinożerców.</LOC_STRING>
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcounterfailed">O nie! Jeden z twoich drapieżników zabił roślinożercę.</LOC_STRING>	
+    <LOC_STRING _locID="TheWorld:HugeBiomeoverallcountersuccess">Dobra robota! Udało ci się poprowadzić wybieg sawanny i nie doprowadzić do zranienia żadnego z roślinożerców!</LOC_STRING>
 </ZT2Strings>
